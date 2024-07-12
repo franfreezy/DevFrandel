@@ -11,7 +11,7 @@ export default function App() {
               {/* Logo and Frandel */}
               <div className="flex items-center space-x-2">
               <img src="/src/assets/CTO.jpg" alt="Logo" className="h-16 w-16 object-cover rounded-full" />
-                <a href="#home" className="text-white text-lg font-bold">Frandel</a>
+                <a href="#home" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
               </div>
               
               {/* Middle Links */}
