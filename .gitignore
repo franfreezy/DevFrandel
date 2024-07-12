@@ -1,0 +1,7 @@
+/package-lock.json
+/package.json
+/node_modules
+/devportfolio/node_modules
+devportfolio/package-lock.json
+devportfolio/package.json
+devportfolio/vite.config.js
