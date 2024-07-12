@@ -5,3 +5,5 @@
 devportfolio/package-lock.json
 devportfolio/package.json
 devportfolio/vite.config.js
+devportfolio/postcss.config.js
+devportfolio/tailwind.config.js
