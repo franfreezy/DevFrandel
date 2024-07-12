@@ -10,14 +10,14 @@ export default function App() {
             <div className="container mx-auto flex justify-between items-center">
               {/* Logo and Frandel */}
               <div className="flex items-center space-x-2">
-               <img src="/src/assets/CTO.jpg" alt="Logo" className="h-8 w-8 object-contain rounded-full" />
+              <img src="/src/assets/CTO.jpg" alt="Logo" className="h-16 w-16 object-cover rounded-full" />
                 <a href="#home" className="text-white text-lg font-bold">Frandel</a>
               </div>
               
               {/* Middle Links */}
               <div className="flex space-x-4">
-                <a href="#projects" className="text-gray-300 hover:text-white">Projects</a>
-                <a href="#about" className="text-gray-300 hover:text-white">About</a>
+                <a href="#projects"className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
+                <a href="#about" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
                 <a 
                   href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." 
                   target="_blank" 
@@ -45,10 +45,10 @@ export default function App() {
         </div>
       </div>
 
-      <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
+      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
         <h1 className="text-white text-3xl">Section 2</h1>
       </div>
-      <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
+      <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
         <h1 className="text-white text-3xl">Section 3</h1>
       </div>
       <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
