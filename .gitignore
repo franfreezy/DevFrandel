@@ -1,9 +1,5 @@
-/package-lock.json
-/package.json
-/node_modules
-/devportfolio/node_modules
-devportfolio/package-lock.json
-devportfolio/package.json
-devportfolio/vite.config.js
-devportfolio/postcss.config.js
-devportfolio/tailwind.config.js
+Devportfolio/package-lock.json
+Devportfolio/package.json
+Devportfolio/tailwind.config.js
+Devportfolio/postcss.config.js
+Devportfolio/vite.config.js
