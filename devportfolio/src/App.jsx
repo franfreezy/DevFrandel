@@ -46,7 +46,7 @@ export default function App() {
   return (
     <>
       <div id="home" className="min-h-screen">
-        <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('assets/img3.jpg')" }}>
+        <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <nav className="bg-gray-900 w-full p-3 fixed top-0">
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo and Frandel */}
