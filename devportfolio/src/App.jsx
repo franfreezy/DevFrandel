@@ -46,37 +46,34 @@ export default function App() {
   return (
     <>
       <div id="home" className="min-h-screen">
-        <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <nav className="bg-gray-900 w-full p-3 fixed top-0">
-  <div className="container mx-auto flex justify-between items-center">
-    {/* Logo and Frandel */}
-    <div className="flex items-center space-x-2">
-      <a href="#home" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
-      <a href="#about" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
-      <a href="#blog" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
-    </div>
-    
-    {/* Middle Links */}
-    <div className="flex space-x-2">
-      <a href="#projects" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
-      <a href="/assets/FrandelCV.pdf" download className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
-      <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
-    </div>
-    
-    {/* Social Icons */}
-    <div className="flex space-x-1">
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/github.png')" }} href="https://github.com/franfreezy"></a>
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
-    </div>
-  </div>
-</nav>
+        <div className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+          <nav className="bg-gray-900 w-full p-3 fixed top-0">
+            <div className="container mx-auto flex justify-between items-center">
+              {/* Logo and Frandel */}
+              <div className="flex items-center space-x-2">
+                <a href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
+                <a href="#about" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
+                <a href="#blog" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
+              </div>
+              
+              {/* Middle Links */}
+              <div className="flex space-x-2">
+                <a href="#projects" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
+                <a href="/assets/FrandelCV.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
+                <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
+              </div>
+              
+              {/* Social Icons */}
+              <div className="flex space-x-1">
+                <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/github.png')" }} href="https://github.com/franfreezy"></a>
+                <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
+                <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
+              </div>
+            </div>
+          </nav>
 
-          <img src="/assets/CTO.jpg" alt="Logo" className="h-80 w-80 object-cover rounded-full" />
-          <h1>  </h1>
-          <div className="text-center text-white text-4xl">
-            I am {displayedText}
-          </div>
+          <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
+          <h1 className="text-center text-white text-2xl sm:text-4xl mt-4 sm:mt-0">I am {displayedText}</h1>
         </div>
 
         <button
@@ -101,13 +98,13 @@ export default function App() {
       </div>
 
       <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">Projects onboarded soon. For now take a glance at the CV</h1>
+        <h1 className="text-white text-2xl sm:text-3xl">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">About comig up in a few</h1>
+        <h1 className="text-white text-2xl sm:text-3xl">About coming up in a few</h1>
       </div>
       <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">Blogs coming up in a few</h1>
+        <h1 className="text-white text-2xl sm:text-3xl">Blogs coming up in a few</h1>
       </div>
     </>
   );
