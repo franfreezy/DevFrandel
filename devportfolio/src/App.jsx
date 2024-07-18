@@ -53,6 +53,7 @@ export default function App() {
     <div className="flex items-center space-x-2">
       <a href="#home" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
       <a href="#about" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
+      <a href="#blog" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
     </div>
     
     {/* Middle Links */}
@@ -100,13 +101,13 @@ export default function App() {
       </div>
 
       <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">Section 2</h1>
+        <h1 className="text-white text-3xl">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">Section 3</h1>
+        <h1 className="text-white text-3xl">About comig up in a few</h1>
       </div>
-      <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
-        <h1 className="text-white text-3xl">Section 4</h1>
+      <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
+        <h1 className="text-white text-3xl">Blogs coming up in a few</h1>
       </div>
     </>
   );
