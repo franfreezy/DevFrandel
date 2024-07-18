@@ -47,40 +47,30 @@ export default function App() {
     <>
       <div id="home" className="min-h-screen">
         <div className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/src/assets/img3.jpg')" }}>
-          <nav className="bg-gray-800 w-full p-4 fixed top-0">
-            <div className="container mx-auto flex justify-between items-center">
-              {/* Logo and Frandel */}
-              <div className="flex items-center space-x-2">
-                
-                <a href="#home" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
-              </div>
-              
-              {/* Middle Links */}
-              <div className="flex space-x-2">
-                <a href="#projects" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
-                <a href="#about" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
-                <a 
-                  href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 text-white px-2 py-2 rounded hover:bg-blue-700 transition duration-300"
-                >
-                  Hire Me
-                </a>
-              </div>
-              
-              {/* Download Resume Button */}
-              <div className="flex space-x-2">
-                <a 
-                  href="/src/assets/FrandelCV.pdf" 
-                  download 
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                >
-                  Download Resume
-                </a>
-              </div>
-            </div>
-          </nav>
+        <nav className="bg-gray-900 w-full p-3 fixed top-0">
+  <div className="container mx-auto flex justify-between items-center">
+    {/* Logo and Frandel */}
+    <div className="flex items-center space-x-2">
+      <a href="#home" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
+      <a href="#about" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
+    </div>
+    
+    {/* Middle Links */}
+    <div className="flex space-x-2">
+      <a href="#projects" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
+      <a href="/src/assets/FrandelCV.pdf" download className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
+      <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
+    </div>
+    
+    {/* Social Icons */}
+    <div className="flex space-x-1">
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/src/assets/github.png')" }} href="https://github.com/franfreezy"></a>
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/src/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/src/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
+    </div>
+  </div>
+</nav>
+
           <img src="/src/assets/CTO.jpg" alt="Logo" className="h-80 w-80 object-cover rounded-full" />
           <h1>  </h1>
           <div className="text-center text-white text-4xl">
