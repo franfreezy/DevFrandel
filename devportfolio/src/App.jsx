@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 export default function App() {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState(''); //taking advantage of a useState () react hook
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const texts = ['Frandel', 'a Software Engineer', 'a DSA Expert', 'a Hardware Engineer'];
+  const [isTyping, setIsTyping] = useState(true); // State to manage whether we're typing or erasing
+  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a DSA Expert.', 'a Hardware Engineer.'];
 
   useEffect(() => {
     const typeText = () => {
@@ -17,21 +18,25 @@ export default function App() {
       setCharIndex((prev) => prev - 1);
     };
 
-    let currentInterval;
+    let currentTimeout;
 
-    if (charIndex < texts[index].length) {
-      currentInterval = setInterval(typeText, 1000);
-    } else if (charIndex > 0) {
-      setTimeout(() => {
-        currentInterval = setInterval(eraseText, 1000);
-      }, 2000); // Pause before erasing
+    if (isTyping) {
+      if (charIndex < texts[index].length) {
+        currentTimeout = setTimeout(typeText, 100); // Typing speed
+      } else {
+        setTimeout(() => setIsTyping(false), 2000); // Pause before erasing
+      }
     } else {
-      setIndex((prev) => (prev + 1) % texts.length);
-      setCharIndex(0);
+      if (charIndex > 0) {
+        currentTimeout = setTimeout(eraseText, 100); // Erasing speed
+      } else {
+        setIsTyping(true);
+        setIndex((prev) => (prev + 1) % texts.length);
+      }
     }
 
-    return () => clearInterval(currentInterval);
-  }, [charIndex, index, texts]);
+    return () => clearTimeout(currentTimeout);
+  }, [charIndex, isTyping, index, texts]);
 
   return (
     <>
