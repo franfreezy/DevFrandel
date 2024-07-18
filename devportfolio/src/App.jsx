@@ -65,14 +65,14 @@ export default function App() {
     
     {/* Social Icons */}
     <div className="flex space-x-1">
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/public/assets/github.png')" }} href="https://github.com/franfreezy"></a>
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/public/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
-      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/public/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/github.png')" }} href="https://github.com/franfreezy"></a>
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
+      <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
     </div>
   </div>
 </nav>
 
-          <img src="/public/assets/CTO.jpg" alt="Logo" className="h-80 w-80 object-cover rounded-full" />
+          <img src="/assets/CTO.jpg" alt="Logo" className="h-80 w-80 object-cover rounded-full" />
           <h1>  </h1>
           <div className="text-center text-white text-4xl">
             I am {displayedText}
@@ -100,13 +100,13 @@ export default function App() {
         )}
       </div>
 
-      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/public/assets/img3.jpg')" }}>
+      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <h1 className="text-white text-3xl">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
-      <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/public/assets/img3.jpg')" }}>
+      <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <h1 className="text-white text-3xl">About comig up in a few</h1>
       </div>
-      <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/public/assets/img3.jpg')" }}>
+      <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <h1 className="text-white text-3xl">Blogs coming up in a few</h1>
       </div>
     </>
