@@ -59,7 +59,7 @@ export default function App() {
               {/* Middle Links */}
               <div className="flex space-x-2">
                 <a href="#projects" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
-                <a href="/assets/FrandelCV.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
+                <a href="/assets/FrandelResumeTemplate.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
                 <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
               </div>
               
@@ -73,6 +73,7 @@ export default function App() {
           </nav>
 
           <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
+          <br />
           <h1 className="text-center text-white text-2xl sm:text-4xl mt-4 sm:mt-0">I am {displayedText}</h1>
         </div>
 
