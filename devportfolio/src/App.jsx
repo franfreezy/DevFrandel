@@ -118,21 +118,22 @@ export default function App() {
         <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-2xl sm:text-3xl text-center px-4 font-serif">
-          I am Wanjawa Frandel, I possess a myriad of valuable skills 
-          that I believe are requisite for transforming the world today and making it a better place for everyone who calls it home. 
-          Just as it takes the light from the sun about 8 minutes to reach the earth, I believe in sniffing on opportunities way before 
-          they materialize and fully capitalizing on the opportunity when the opportunity finally materializes. This distinguishes me from the over 7 billion 
-          people who are on our planet today.
-          I strongly believe that, with commitment, selflessness, compassion 
-          and intelligence we can build technology solutions that not only help us, 
-          the solution developers or the wealthy of the society, but also address the perennial plight of the common person, 
-          hence hastening the realization of the #17SDGs as envisioned by the United Nations.
-          With my engineering and programming background, I am privileged to look at ordinary 
-          things in an extraordinary way and break down complex problems into simple solvable blocks.
-          Here is the catch though: there is only one way to find out.
-        </h1>
-      </div>
+  <h1 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
+    I am Wanjawa Frandel, I possess a myriad of valuable skills 
+    that I believe are requisite for transforming the world today and making it a better place for everyone who calls it home. 
+    Just as it takes the light from the sun about 8 minutes to reach the earth, I believe in sniffing on opportunities way before 
+    they materialize and fully capitalizing on the opportunity when the opportunity finally materializes. This distinguishes me from the over 7 billion 
+    people who are on our planet today.
+    I strongly believe that, with commitment, selflessness, compassion 
+    and intelligence we can build technology solutions that not only help us, 
+    the solution developers or the wealthy of the society, but also address the perennial plight of the common person, 
+    hence hastening the realization of the #17SDGs as envisioned by the United Nations.
+    With my engineering and programming background, I am privileged to look at ordinary 
+    things in an extraordinary way and break down complex problems into simple solvable blocks.
+    Here is the catch though: there is only one way to find out.
+  </h1>
+</div>
+
       <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Blogs coming up in a few</h1>
       </div>
