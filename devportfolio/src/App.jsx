@@ -123,9 +123,9 @@ export default function App() {
     that I believe are requisite for transforming the world today and making it a better place for everyone who calls it home. 
     Just as it takes the light from the sun about 8 minutes to reach the earth, I believe in sniffing on opportunities way before 
     they materialize and fully capitalizing on the opportunity when the opportunity finally materializes. This distinguishes me from the over 7 billion 
-    people who are on our planet today.</p>
-    <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">   
-       I strongly believe that, with commitment, selflessness, compassion 
+    people who are on our planet today.
+    
+    I strongly believe that, with commitment, selflessness, compassion 
     and intelligence we can build technology solutions that not only help us, 
     the solution developers or the wealthy of the society, but also address the perennial plight of the common person, 
     hence hastening the realization of the #17SDGs as envisioned by the United Nations.
