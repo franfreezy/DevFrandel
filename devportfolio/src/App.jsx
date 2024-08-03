@@ -56,10 +56,9 @@ export default function App() {
             <div className="container mx-auto flex justify-between items-center">
               {/* Logo and Mobile Menu Toggle */}
               <div className="flex items-center space-x-2">
-                <a href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
-                <button onClick={handleMobileMenuToggle} className="sm:hidden text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
-                  Menu
-                </button>
+                <a onClick={handleMobileMenuToggle}  href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
+                
+
                 <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
                   <a href="#about" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
                   <a href="#blog" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
