@@ -118,7 +118,7 @@ export default function App() {
         <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-  <h1 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
+  <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
     I am Wanjawa Frandel, I possess a myriad of valuable skills 
     that I believe are requisite for transforming the world today and making it a better place for everyone who calls it home. 
     Just as it takes the light from the sun about 8 minutes to reach the earth, I believe in sniffing on opportunities way before 
@@ -131,7 +131,7 @@ export default function App() {
     With my engineering and programming background, I am privileged to look at ordinary 
     things in an extraordinary way and break down complex problems into simple solvable blocks.
     Here is the catch though: there is only one way to find out.
-  </h1>
+  </p>
 </div>
 
       <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
