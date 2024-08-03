@@ -48,6 +48,10 @@ export default function App() {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  const handleMenuClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       <div id="home" className="min-h-screen">
@@ -56,15 +60,13 @@ export default function App() {
             <div className="container mx-auto flex justify-between items-center">
               {/* Logo and Mobile Menu Toggle */}
               <div className="flex items-center space-x-2">
-                <a onClick={handleMobileMenuToggle}  href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
-                
-
-                <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-                  <a href="#about" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
-                  <a href="#blog" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
-                  <a href="#projects" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
-                  <a href="/assets/FrandelResumeTemplate.pdf" download className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
-                  <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
+                <a onClick={handleMobileMenuToggle} href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
+                <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-gray-900 absolute top-12 left-0 w-full`}>
+                  <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>About</a>
+                  <a href="#blog" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Blogs</a>
+                  <a href="#projects" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Projects</a>
+                  <a href="/assets/FrandelResumeTemplate.pdf" download className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Download Resume</a>
+                  <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Hire Me</a>
                 </div>
               </div>
 
