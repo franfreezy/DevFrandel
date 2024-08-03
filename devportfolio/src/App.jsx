@@ -101,7 +101,7 @@ export default function App() {
         </button>
 
         {isDropdownOpen && (
-          <div className="absolute bottom-16 left-4 bg-white text-black rounded shadow-lg">
+          <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg">
             <ul>
               <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={() => alert('M-Pesa transfer')}>
                 M-Pesa
