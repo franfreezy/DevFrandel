@@ -6,6 +6,7 @@ export default function App() {
   const [charIndex, setCharIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a DSA Expert.', 'a Hardware Engineer.'];
 
   useEffect(() => {
@@ -43,17 +44,29 @@ export default function App() {
     setIsDropdownOpen((prev) => !prev);
   };
 
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   return (
     <>
       <div id="home" className="min-h-screen">
         <div className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
           <nav className="bg-gray-900 w-full p-3 fixed top-0">
             <div className="container mx-auto flex justify-between items-center">
-              {/* Logo and Frandel */}
+              {/* Logo and Mobile Menu Toggle */}
               <div className="flex items-center space-x-2">
                 <a href="#home" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Dev Freezy</a>
-                <a href="#about" className="hidden sm:inline-block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
-                <a href="#blog" className="hidden sm:inline-block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
+                <button onClick={handleMobileMenuToggle} className="sm:hidden text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                  Menu
+                </button>
+                <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+                  <a href="#about" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">About</a>
+                  <a href="#blog" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Blogs</a>
+                  <a href="#projects" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
+                  <a href="/assets/FrandelResumeTemplate.pdf" download className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
+                  <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="block text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
+                </div>
               </div>
 
               {/* Middle Links */}
