@@ -7,7 +7,7 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a DSA Expert.', 'a Hardware Engineer.'];
+  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a DSA Expert.', 'a Embedded Systems Engineer.', 'a Data Engineer.'];
 
   useEffect(() => {
     const typeText = () => {
