@@ -54,7 +54,7 @@ export default function App() {
 
   const handleMpesaClick = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/backend/api/data/');
+      const response = await fetch('http://127.0.0.1:8000/backend/index/');
       if (!response.ok) {
         throw new Error('Failed to fetch data from Django');
       }
