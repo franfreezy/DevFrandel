@@ -52,6 +52,19 @@ export default function App() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleMpesaClick = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/backend/api/data/');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data from Django');
+      }
+      const result = await response.json();
+      alert(JSON.stringify(result)); // Alert the data received from the endpoint
+    } catch (error) {
+      alert(error.message); // Alert the error message if there's an error
+    }
+  };
+
   return (
     <>
       <div id="home" className="min-h-screen">
@@ -103,7 +116,7 @@ export default function App() {
         {isDropdownOpen && (
           <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg">
             <ul>
-              <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={() => alert('M-Pesa transfer')}>
+              <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
                 M-Pesa
               </li>
               <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={() => alert('Visa transfer')}>
@@ -118,25 +131,9 @@ export default function App() {
         <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-   <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
-    I am Wanjawa Frandel, I possess a myriad of valuable skills 
-    that I believe are requisite for transforming the world today and making it a better place for everyone who calls it home. 
-    Just as it takes the light from the sun about 8 minutes to reach the earth, I believe in sniffing on opportunities way before 
-    they materialize and fully capitalizing on the opportunity when the opportunity finally materializes. This distinguishes me from the over 7 billion 
-    people who are on our planet today.
-    
-    I strongly believe that, with commitment, selflessness, compassion 
-    and intelligence we can build technology solutions that not only help us, 
-    the solution developers or the wealthy of the society, but also address the perennial plight of the common person, 
-    hence hastening the realization of the #17SDGs as envisioned by the United Nations.
-    With my engineering and programming background, I am privileged to look at ordinary 
-    things in an extraordinary way and break down complex problems into simple solvable blocks.
-    Here is the catch though: there is only one way to find out.
-  </p>
-</div>
-
-      <div id="blog" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Blogs coming up in a few</h1>
+        <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
+          I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise ranges from web development to embedded systems and data engineering. I am committed to continuous learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.
+        </p>
       </div>
     </>
   );
