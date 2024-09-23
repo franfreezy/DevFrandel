@@ -54,7 +54,7 @@ export default function App() {
 
   const handleMpesaClick = () => {
     try {
-      window.location.href = 'https://web.mypayd.app/devfreezy'; 
+      window.location.href = 'https://link.payd.one/REIhZC'; 
     } catch (error) {
       alert(error.message); 
     }
