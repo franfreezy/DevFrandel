@@ -116,7 +116,7 @@ export default function App() {
                 M-Pesa
               </li>
               <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleMpesaClick}>
-                Visa
+                Diaspora
               </li>
             </ul>
           </div>
