@@ -141,7 +141,7 @@ export default function App() {
 
       
       <div className="min-w-[300px] md:min-w-[400px] bg-white rounded-lg shadow-xl p-6 flex-shrink-0 hover:scale-110 transition-transform duration-300">
-        <img src="https://via.placeholder.com/400x200" alt="Project Image" className="rounded-md mb-4">
+        <img src="https://via.placeholder.com/400x200" alt="Project Image" className="rounded-md mb-4"/>
         <h3 className="text-xl md:text-2xl font-semibold">Featured Project</h3>
         <p className="mt-2 text-gray-600 text-sm md:text-base">Description of the featured project.</p>
         <a href="https://github.com/yourgithubusername/project" target="_blank" className="mt-4 inline-block text-blue-500 hover:text-blue-700">
