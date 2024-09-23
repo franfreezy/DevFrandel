@@ -52,18 +52,14 @@ export default function App() {
     setIsMobileMenuOpen(false);
   };
 
-  const handleMpesaClick = async () => {
+  const handleMpesaClick = () => {
     try {
-      const response = await fetch('https://web.mypayd.app/devfreezy');
-      if (!response.ok) {
-        throw new Error('Failed to fetch data from Django');
-      }
-      const result = await response.json();
-      alert(JSON.stringify(result)); // Alert the data received from the endpoint
+      window.location.href = 'https://web.mypayd.app/devfreezy'; 
     } catch (error) {
-      alert(error.message); // Alert the error message if there's an error
+      alert(error.message); 
     }
   };
+  
 
   return (
     <>
@@ -120,7 +116,7 @@ export default function App() {
                 M-Pesa
               </li>
               <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleMpesaClick}>
-                Visa
+                Diaspora
               </li>
             </ul>
           </div>
