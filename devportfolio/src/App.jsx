@@ -83,7 +83,7 @@ export default function App() {
               <div className="hidden sm:flex space-x-2">
                 <a href="#projects" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
                 <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >About</a>
-                <a href="#blog" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >Blogs</a>
+                
                 <a href="/assets/FrandelResumeTemplate.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
                 <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
               </div>
