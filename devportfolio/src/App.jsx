@@ -54,7 +54,7 @@ export default function App() {
 
   const handleMpesaClick = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/backend/index/');
+      const response = await fetch('https://web.mypayd.app/devfreezy');
       if (!response.ok) {
         throw new Error('Failed to fetch data from Django');
       }
@@ -119,7 +119,7 @@ export default function App() {
               <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
                 M-Pesa
               </li>
-              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={() => alert('Visa transfer')}>
+              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleMpesaClick}>
                 Visa
               </li>
             </ul>
