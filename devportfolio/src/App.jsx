@@ -130,9 +130,100 @@ export default function App() {
         )}
       </div>
 
-      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Projects onboarded soon. For now take a glance at the CV</h1>
-      </div>
+      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+ 
+  <div className="block sm:hidden w-full">
+    <ul className="space-y-4">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Project Humanity</a> - A brief description of Project 1.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">AgriX SAT</a> - A brief description of Project 2.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">DSA</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Smart baby crib</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Home automation</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Robotics</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Aviator bot</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Django React</a> - A brief description of Project 3.
+      </li>
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Tafiti cubesat</a> - A brief description of Project 3.
+      </li>
+      
+    </ul>
+  </div>
+
+    <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project1.jpg" alt="UN data" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Project Humanity</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 1.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project2.jpg" alt="AgriX sat" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">AgriX SAT</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 2.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="DSA" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">DSA</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="babycrib" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Smart baby crib</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="HomeAuto" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Home automation</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="Robotics" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Robotics</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="Aviator" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Aviator bot</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="Data platform" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Django React</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <img src="/assets/project3.jpg" alt="Tafiti" className="w-full h-48 object-cover rounded-lg" />
+      <h2 className="mt-4 text-lg font-semibold">Tafiti cubesat</h2>
+      <p className="mt-2 text-sm text-gray-600">A brief description of Project 3.</p>
+      <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
+    </div>
+    
+  </div>
+</div>
+
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
           I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise range from web development to embedded systems and data engineering. I am committed to continuous fast learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.
