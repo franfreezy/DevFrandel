@@ -135,7 +135,7 @@ export default function App() {
       </div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
-          I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise ranges from web development to embedded systems and data engineering. I am committed to continuous learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.
+          I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise range from web development to embedded systems and data engineering. I am committed to continuous fast learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.
         </p>
       </div>
     </>
