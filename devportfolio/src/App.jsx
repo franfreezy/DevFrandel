@@ -167,7 +167,7 @@ export default function App() {
 
     <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
     <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/project1.jpg" alt="UN data" className="w-full h-48 object-cover rounded-lg" />
+      <img src="/assets/undata.png" alt="UN data" className="w-full h-48 object-cover rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Project Humanity</h2>
       <p className="mt-2 text-sm text-gray-600">A brief description of Project 1.</p>
       <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 underline">View on GitHub</a>
