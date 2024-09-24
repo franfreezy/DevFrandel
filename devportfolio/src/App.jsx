@@ -135,31 +135,31 @@ export default function App() {
   <div className="block sm:hidden w-full">
     <ul className="space-y-4">
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Project Humanity</a> - A brief description of Project 1.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Project Humanity</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">AgriX SAT</a> - A brief description of Project 2.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">AgriX SAT</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">DSA</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">DSA</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Smart baby crib</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Smart baby crib</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Home automation</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Home automation</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Robotics</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Robotics</a>
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Aviator bot</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Aviator bot</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Django React</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Django React</a>
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Tafiti cubesat</a> - A brief description of Project 3.
+        <a href="https://github.com/franfreezy" target="_blank" className="underline">Tafiti cubesat</a> 
       </li>
       
     </ul>
