@@ -135,31 +135,31 @@ export default function App() {
   <div className="block sm:hidden w-full">
     <ul className="space-y-4">
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Project Humanity</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">AgriX SAT</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">AgriX SAT</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">DSA</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">DSA</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Smart baby crib</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Smart baby crib</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Home automation</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Home automation</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Robotics</a>
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Robotics</a>
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Aviator bot</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Aviator bot</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Django React</a>
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Django React</a>
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
-        <a href="https://github.com/franfreezy" target="_blank" className="underline">Tafiti cubesat</a> 
+        <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Tafiti cubesat</a> 
       </li>
       
     </ul>
