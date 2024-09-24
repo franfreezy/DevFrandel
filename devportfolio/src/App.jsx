@@ -59,6 +59,13 @@ export default function App() {
       alert(error.message); 
     }
   };
+  const handleDiasporaClick = () => {
+    try {
+      window.location.href = 'https://web.mypayd.app/devfreezy'; 
+    } catch (error) {
+      alert(error.message); 
+    }
+  };
   
 
   return (
@@ -83,7 +90,7 @@ export default function App() {
               <div className="hidden sm:flex space-x-2">
                 <a href="#projects" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
                 <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >About</a>
-                <a href="#blog" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >Blogs</a>
+                
                 <a href="/assets/FrandelResumeTemplate.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
                 <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
               </div>
@@ -106,7 +113,7 @@ export default function App() {
           onClick={handleDropdownToggle}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
         >
-          Uncle Please
+          Sponsor
         </button>
 
         {isDropdownOpen && (
@@ -115,7 +122,7 @@ export default function App() {
               <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
                 M-Pesa
               </li>
-              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleMpesaClick}>
+              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
                 Diaspora
               </li>
             </ul>
@@ -123,42 +130,9 @@ export default function App() {
         )}
       </div>
 
-      <div id="projects" className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center space-y-8" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-  
-  <h1 className="text-white text-2xl sm:text-3xl text-center px-4">
-    Projects onboarded soon. For now, take a glance at the CV
-  </h1>
-
-  
-  <div className="relative w-full max-w-7xl px-4">
-    
-    <div id="project-scroll" className="flex space-x-4 overflow-x-auto p-4 scroll-smooth snap-x snap-mandatory">
-      
-      <div className="min-w-[200px] md:min-w-[300px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover:scale-105 transition-transform duration-300">
-        <h3 className="text-lg md:text-xl font-semibold">Project 1</h3>
-        <p className="mt-2 text-gray-600 text-sm md:text-base">Description of Project 1.</p>
+      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+        <h1 className="text-white text-2xl sm:text-3xl text-center px-4">Projects onboarded soon. For now take a glance at the CV</h1>
       </div>
-
-      
-      <div className="min-w-[300px] md:min-w-[400px] bg-white rounded-lg shadow-xl p-6 flex-shrink-0 hover:scale-110 transition-transform duration-300">
-        <img src="https://via.placeholder.com/400x200" alt="Project Image" className="rounded-md mb-4">
-        <h3 className="text-xl md:text-2xl font-semibold">Featured Project</h3>
-        <p className="mt-2 text-gray-600 text-sm md:text-base">Description of the featured project.</p>
-        <a href="https://github.com/yourgithubusername/project" target="_blank" className="mt-4 inline-block text-blue-500 hover:text-blue-700">
-          View on GitHub
-        </a>
-      </div>
-
-      
-      <div className="min-w-[200px] md:min-w-[300px] bg-white rounded-lg shadow-lg p-6 flex-shrink-0 hover:scale-105 transition-transform duration-300">
-        <h3 className="text-lg md:text-xl font-semibold">Project 3</h3>
-        <p className="mt-2 text-gray-600 text-sm md:text-base">Description of Project 3.</p>
-      </div>
-
-      
-    </div>
-  </div>
-</div>
       <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
           I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise ranges from web development to embedded systems and data engineering. I am committed to continuous learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.

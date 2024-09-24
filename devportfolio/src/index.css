@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%); /* Move left until cards loop */
+  }
+  100% {
+    transform: translateX(0); /* Return to starting point */
+  }
+}
+
+#project-carousel {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-card {
+  min-width: 200px;
+  height: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
