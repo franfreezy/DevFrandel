@@ -59,6 +59,13 @@ export default function App() {
       alert(error.message); 
     }
   };
+  const handleDiasporaClick = () => {
+    try {
+      window.location.href = 'https://web.mypayd.app/devfreezy'; 
+    } catch (error) {
+      alert(error.message); 
+    }
+  };
   
 
   return (
@@ -106,7 +113,7 @@ export default function App() {
           onClick={handleDropdownToggle}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
         >
-          Uncle Please
+          Sponsor
         </button>
 
         {isDropdownOpen && (
@@ -115,7 +122,7 @@ export default function App() {
               <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
                 M-Pesa
               </li>
-              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleMpesaClick}>
+              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
                 Diaspora
               </li>
             </ul>
