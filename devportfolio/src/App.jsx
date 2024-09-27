@@ -133,32 +133,32 @@ export default function App() {
       <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
  
   <div className="block sm:hidden w-full ">
-    <ul className="space-y-2 mt-8">
+    <ul className="space-y-2 mt-16">
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/CommsJKUAT/AgroXSAT" target="_blank" className="no-underline">AgriX SAT</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="no-underline">DSA</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Smart baby crib</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Home automation</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Robotics</a>
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="no-underline">Aviator bot</a> 
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="no-underline">Django React</a>
       </li>
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+      <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="no-underline">Tafiti cubesat</a> 
       </li>
       
