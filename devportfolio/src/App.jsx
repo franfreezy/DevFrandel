@@ -133,7 +133,7 @@ export default function App() {
       <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
  
   <div className="block sm:hidden w-full ">
-    <ul className="space-y-2 mt-32">
+    <ul className="space-y-2 mt-20">
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
