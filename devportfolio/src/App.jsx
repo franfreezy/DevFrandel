@@ -130,11 +130,11 @@ export default function App() {
         )}
       </div>
 
-      <div id="projects" className="h-screen w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+      <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
  
   <div className="block sm:hidden w-full">
-    <ul className="space-y-4">
-      <li className="bg-white text-black p-4 rounded-lg shadow-lg">
+    <ul className="space-y-2">
+      <li className="bg-white text-black p- rounded-lg shadow-lg">
         <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg">
@@ -165,58 +165,58 @@ export default function App() {
     </ul>
   </div>
 
-    <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/undata.png" alt="UN data" className="w-full h-48 object-cover rounded-lg" />
+    <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-16 ">
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/undata.png" alt="UN data" className="w-full h-12 object-cover rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Project Humanity</h2>
       <p className="mt-2 text-sm text-gray-600">Data analysis on Data from UN</p>
       <a href="https://github.com/franfreezy/dataScience" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/agrisat.png" alt="AgriX sat" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/agrisat.png" alt="AgriX sat" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">AgriX SAT</h2>
       <p className="mt-2 text-sm text-gray-600">JKUAT Satellite project </p>
       <a href="https://github.com/CommsJKUAT/AgroXSAT" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/tafiti.jpeg" alt="Tafiti" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/tafiti.jpeg" alt="Tafiti" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Tafiti cubesat</h2>
       <p className="mt-2 text-sm text-gray-600">TAFITI satellite project</p>
       <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="mt-4 text-blue-500 no-underline">View on LinkedIn</a>
     </div>
     
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/babycrib.jpeg" alt="babycrib" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/babycrib.jpeg" alt="babycrib" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Smart baby crib</h2>
       <p className="mt-2 text-sm text-gray-600">Baby crib with sensors to monitor the baby </p>
       <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/homeauto.jpeg" alt="HomeAuto" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/homeauto.jpeg" alt="HomeAuto" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Home automation</h2>
       <p className="mt-2 text-sm text-gray-600">Controlling switches and lamps via the web</p>
       <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/robot.jpeg" alt="Robotics" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/robot.jpeg" alt="Robotics" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Robotics</h2>
       <p className="mt-2 text-sm text-gray-600">Obstacle avoidance and line following</p>
       <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/aviator.jpeg" alt="Aviator" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/aviator.jpeg" alt="Aviator" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Aviator bot</h2>
       <p className="mt-2 text-sm text-gray-600">Bot to mine data in aviator</p>
       <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/reactdjango.png" alt="Data platform" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/reactdjango.png" alt="Data platform" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">Django React</h2>
       <p className="mt-2 text-sm text-gray-600">Backend-Frontend Data platform</p>
       <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-      <img src="/assets/dsa.png" alt="DSA" className="w-full h-48 object-cover rounded-lg" />
+    <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
+      <img src="/assets/dsa.png" alt="DSA" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">DSA</h2>
       <p className="mt-2 text-sm text-gray-600">Data structures and algos projects</p>
       <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="mt-4 text-blue-500 no-underline">View on GitHub</a>
