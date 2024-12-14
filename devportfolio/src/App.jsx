@@ -7,7 +7,7 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a DSA Expert.', 'an Embedded Systems Engineer.', 'a Data Engineer.', 'an Electronics and computer Engineering student'];
+  const texts = ['Frandel Wanjawa.', 'a Software Engineer.',  'an Embedded Systems Engineer.', 'a Data Enthusiast.'];
 
   useEffect(() => {
     const typeText = () => {
@@ -82,7 +82,7 @@ export default function App() {
                   
                   <a href="#projects" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Projects</a>
                   <a href="/assets/Updatedresume.pdf" download className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Download Resume</a>
-                  <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Hire Me</a>
+                  <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Chat</a>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ export default function App() {
                 <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >About</a>
                 
                 <a href="/assets/Updatedresume.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
-                <a href="https://wa.me/+254729634366?text=Hello,%20I%20am%20interested%20in%20hiring%20you." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Hire Me</a>
+                <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Chat</a>
               </div>
 
               {/* Social Icons */}
