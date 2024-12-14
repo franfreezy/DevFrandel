@@ -138,7 +138,7 @@ export default function App() {
         <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-        <a href="https://agroxsat.onrender.com" target="_blank" className="no-underline">AgriX SAT</a> 
+        <a href="https://agroxsatsite.onrender.com" target="_blank" className="no-underline">AgriX SAT</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="no-underline">DSA</a> 
@@ -176,7 +176,7 @@ export default function App() {
       <img src="/assets/agrisat.png" alt="AgriX sat" className="w-full h-12 object-contain rounded-lg" />
       <h2 className="mt-4 text-lg font-semibold">AgriX SAT</h2>
       <p className="mt-2 text-sm text-gray-600">JKUAT Satellite project </p>
-      <a href="https://agroxsat.onrender.com" target="_blank" className="mt-4 text-black-500 no-underline">Visit website</a>
+      <a href="https://agroxsatsite.onrender.com" target="_blank" className="mt-4 text-black-500 no-underline">Visit website</a>
     </div>
     <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
       <img src="/assets/tafiti.jpeg" alt="Tafiti" className="w-full h-12 object-contain rounded-lg" />
