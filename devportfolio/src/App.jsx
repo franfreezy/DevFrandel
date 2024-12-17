@@ -138,7 +138,7 @@ export default function App() {
         <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-        <a href="https://agroxsatsite.onrender.com" target="_blank" className="no-underline">AgriX SAT</a> 
+        <a href="https://agroxsatsite.onrender.com" target="_blank" className="no-underline">AgriX cubesat</a> 
       </li>
       <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
         <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="no-underline">DSA</a> 
