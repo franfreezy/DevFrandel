@@ -81,7 +81,7 @@ export default function App() {
                   <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>About</a>
                   
                   <a href="#projects" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Projects</a>
-                  <a href="/assets/Updatedresume.pdf" download className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Download Resume</a>
+                  <a href="/assets/Frandel.pdf" download className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Download Resume</a>
                   <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>Chat</a>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function App() {
                 <a href="#projects" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Projects</a>
                 <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" >About</a>
                 
-                <a href="/assets/Updatedresume.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
+                <a href="/assets/Frandel.pdf" download className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Download Resume</a>
                 <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Chat</a>
               </div>
 
