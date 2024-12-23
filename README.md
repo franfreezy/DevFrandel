@@ -1,1 +1,1 @@
-![Project Logo](devportfolio/frandel.png)
+![Project Logo](devportfolio/frandel.svg)
