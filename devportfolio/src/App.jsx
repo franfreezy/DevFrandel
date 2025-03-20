@@ -9,6 +9,42 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const texts = ['Frandel Wanjawa.', 'a Hardware Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
   const [isLoading, setIsLoading] = useState(true);
+  const [currentSection, setCurrentSection] = useState(0);
+  const sections = ['home', 'projects', 'about', 'connect'];
+  let touchStartY = 0;
+
+  const handleScroll = (event) => {
+    if (event.deltaY > 0) {
+      
+      navigateToSection(1);
+    } else {
+      
+      navigateToSection(-1);
+    }
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartY = event.touches[0].clientY;
+  };
+  
+  const handleTouchEnd = (event) => {
+    const touchEndY = event.changedTouches[0].clientY;
+    if (touchStartY - touchEndY > 50) {
+     
+      navigateToSection(1);
+    } else if (touchEndY - touchStartY > 50) {
+      
+      navigateToSection(-1);
+    }
+  };
+  
+  const navigateToSection = (direction) => {
+    setCurrentSection((prev) => {
+      const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
+      document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
+      return newIndex;
+    });
+  };
 
   useEffect(() => {
     const typeText = () => {
@@ -88,7 +124,7 @@ export default function App() {
         >
           <nav className="bg-transparent-900 w-full p-3 fixed top-0">
             <div className="container mx-auto flex justify-between items-center">
-              {/* Logo and Mobile Menu Toggle */}
+              
               <div className="flex items-center space-x-2">
                 {!isMobileMenuOpen && (
                   <button
