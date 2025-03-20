@@ -12,15 +12,41 @@ export default function App() {
   const [currentSection, setCurrentSection] = useState(0);
   const sections = ['home', 'projects', 'about', 'connect'];
   let touchStartY = 0;
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowDown') {
+        navigateToSection(1); 
+      } else if (event.key === 'ArrowUp') {
+        navigateToSection(-1);
+      }
+    };
   
+    window.addEventListener('keydown', handleKeyDown);
+  
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+  
+
+  
+
   const handleScroll = (event) => {
+    event.preventDefault(); 
     if (event.deltaY > 0) {
-
-      navigateToSection(1);
+      navigateToSection(1); 
     } else {
-
-      navigateToSection(-1);
+      navigateToSection(-1); 
     }
+  };
+
+  const navigateToSection = (direction) => {
+    setCurrentSection((prev) => {
+      const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
+      document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
+      return newIndex;
+    });
   };
 
   const handleTouchStart = (event) => {
@@ -38,13 +64,7 @@ export default function App() {
     }
   };
 
-  const navigateToSection = (direction) => {
-    setCurrentSection((prev) => {
-      const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
-      document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
-      return newIndex;
-    });
-  };
+  
 
   useEffect(() => {
     const typeText = () => {
