@@ -37,14 +37,17 @@ export default function App() {
     if (event.deltaY > 0) {
       navigateToSection(1); 
     } else {
-      navigateToSection(-1); 
+      navigateToSection(-1);
     }
   };
 
   const navigateToSection = (direction) => {
     setCurrentSection((prev) => {
       const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
-      document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
+      console.log(`Navigating from section ${prev} to section ${newIndex}`); // Debugging
+      if (newIndex !== prev) {
+        document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
+      }
       return newIndex;
     });
   };
@@ -52,14 +55,16 @@ export default function App() {
   const handleTouchStart = (event) => {
     touchStartY = event.touches[0].clientY;
   };
-
+  
   const handleTouchEnd = (event) => {
     const touchEndY = event.changedTouches[0].clientY;
-    if (touchStartY - touchEndY > 50) {
-
+    const swipeThreshold = 20; 
+  
+    if (touchStartY - touchEndY > swipeThreshold) {
+      
       navigateToSection(1);
-    } else if (touchEndY - touchStartY > 50) {
-
+    } else if (touchEndY - touchStartY > swipeThreshold) {
+      
       navigateToSection(-1);
     }
   };
