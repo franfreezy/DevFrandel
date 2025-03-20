@@ -7,7 +7,8 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.', 'a Software Engineer.',  'an Embedded Systems Engineer.', 'a Data Engineer.', 'a Space Enthusiast.'];
+  const texts = ['Frandel Wanjawa.', 'a Software Developer.',  'an Embedded Systems Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const typeText = () => {
@@ -52,6 +53,10 @@ export default function App() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
   const handleMpesaClick = () => {
     try {
       window.location.href = 'https://link.payd.one/REIhZC'; 
@@ -71,7 +76,16 @@ export default function App() {
   return (
     <>
       <div id="home" className="min-h-screen">
-        <div className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+  {isLoading && (
+    <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
+    <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+  )}
+  <div
+    className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center"
+    style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+    onLoad={handleImageLoad} 
+  >
           <nav className="bg-gray-900 w-full p-3 fixed top-0">
             <div className="container mx-auto flex justify-between items-center">
               {/* Logo and Mobile Menu Toggle */}
