@@ -29,3 +29,7 @@
   transition: transform 0.3s ease-in-out;
   will-change: transform;
 }
+html, body {
+  overflow: hidden; 
+  height: 100%; 
+}

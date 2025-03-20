@@ -12,13 +12,13 @@ export default function App() {
   const [currentSection, setCurrentSection] = useState(0);
   const sections = ['home', 'projects', 'about', 'connect'];
   let touchStartY = 0;
-
+  
   const handleScroll = (event) => {
     if (event.deltaY > 0) {
-      
+
       navigateToSection(1);
     } else {
-      
+
       navigateToSection(-1);
     }
   };
@@ -26,18 +26,18 @@ export default function App() {
   const handleTouchStart = (event) => {
     touchStartY = event.touches[0].clientY;
   };
-  
+
   const handleTouchEnd = (event) => {
     const touchEndY = event.changedTouches[0].clientY;
     if (touchStartY - touchEndY > 50) {
-     
+
       navigateToSection(1);
     } else if (touchEndY - touchStartY > 50) {
-      
+
       navigateToSection(-1);
     }
   };
-  
+
   const navigateToSection = (direction) => {
     setCurrentSection((prev) => {
       const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
@@ -111,7 +111,10 @@ export default function App() {
 
   return (
     <>
-      <div id="home" className="min-h-screen">
+      <div id="home" className="min-h-screen"
+        onWheel={handleScroll}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}>
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
             <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
@@ -124,7 +127,7 @@ export default function App() {
         >
           <nav className="bg-transparent-900 w-full p-3 fixed top-0">
             <div className="container mx-auto flex justify-between items-center">
-              
+
               <div className="flex items-center space-x-2">
                 {!isMobileMenuOpen && (
                   <button
