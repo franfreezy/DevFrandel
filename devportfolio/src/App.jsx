@@ -10,66 +10,60 @@ export default function App() {
   const texts = ['Frandel Wanjawa.', 'a Hardware Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
+  const [direction, setDirection] = useState('down'); 
   const sections = ['home', 'projects', 'about', 'connect'];
-  let touchStartY = 0;
+
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowDown') {
-        navigateToSection(1); 
+        navigateToSection(1);
       } else if (event.key === 'ArrowUp') {
         navigateToSection(-1);
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
-  
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-  
 
-  
 
-  const handleScroll = (event) => {
-    event.preventDefault(); 
-    if (event.deltaY > 0) {
-      navigateToSection(1); 
-    } else {
-      navigateToSection(-1);
-    }
-  };
+
 
   const navigateToSection = (direction) => {
     setCurrentSection((prev) => {
       const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
-      console.log(`Navigating from section ${prev} to section ${newIndex}`); // Debugging
+
       if (newIndex !== prev) {
-        document.getElementById(sections[newIndex]).scrollIntoView({ behavior: 'smooth' });
+        const targetSection = document.getElementById(sections[newIndex]);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
+
+      // Update the navigation direction
+      setDirection(direction === 1 ? 'down' : 'up');
+
       return newIndex;
     });
   };
 
-  const handleTouchStart = (event) => {
-    touchStartY = event.touches[0].clientY;
-  };
-  
-  const handleTouchEnd = (event) => {
-    const touchEndY = event.changedTouches[0].clientY;
-    const swipeThreshold = 20; 
-  
-    if (touchStartY - touchEndY > swipeThreshold) {
-      
-      navigateToSection(1);
-    } else if (touchEndY - touchStartY > swipeThreshold) {
-      
-      navigateToSection(-1);
-    }
+  const calculatePercentage = () => {
+    return Math.round(((currentSection + 1) / sections.length) * 100);
   };
 
-  
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+
+
+
+
 
   useEffect(() => {
     const typeText = () => {
@@ -114,9 +108,6 @@ export default function App() {
     setIsMobileMenuOpen(false);
   };
 
-  const handleImageLoad = () => {
-    setIsLoading(false);
-  };
 
   const handleMpesaClick = () => {
     try {
@@ -133,13 +124,11 @@ export default function App() {
     }
   };
 
-
+  
   return (
     <>
       <div id="home" className="min-h-screen"
-        onWheel={handleScroll}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}>
+      >
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
             <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
@@ -156,7 +145,7 @@ export default function App() {
               <div className="flex items-center space-x-2">
                 {!isMobileMenuOpen && (
                   <button
-                    onClick={handleMobileMenuToggle}
+                  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                     className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
                   >
                     <div className="space-y-1">
@@ -219,7 +208,7 @@ export default function App() {
 
 
 
-              {/* Social Icons */}
+             
 
             </div>
           </nav>
@@ -357,6 +346,41 @@ export default function App() {
           <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
         </div>
       </div>
+      <div
+  className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+  style={{
+    background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
+  }}
+>
+<div
+  className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+  style={{
+    background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
+  }}
+>
+  <button
+    onClick={() => {
+      if (currentSection === sections.length - 1) {
+        // Navigate up from the last section
+        setDirection('up');
+        navigateToSection(-1);
+      } else if (currentSection === 0) {
+        
+        setDirection('down');
+        navigateToSection(1);
+      } else {
+        
+        const nextDirection = direction === 'down' ? 1 : -1;
+        setDirection(nextDirection === 1 ? 'down' : 'up');
+        navigateToSection(nextDirection);
+      }
+    }}
+    className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300"
+  >
+    {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
+  </button>
+</div>
+</div>
     </>
   );
 }
