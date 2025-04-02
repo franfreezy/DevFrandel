@@ -87,7 +87,7 @@ export default function App() {
     if (autoSlide) {
       const interval = setInterval(() => {
         setCurrentProfessionalIndex((prevIndex) => (prevIndex + 1) % professionalAchievements.length);
-      }, 10000);
+      }, 5000);
       return () => clearInterval(interval);
     }
   }, [autoSlide, professionalAchievements.length]);
@@ -297,40 +297,19 @@ export default function App() {
         className="h-screen w-full bg-cover bg-center flex flex-col justify-center px-2"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
-          {/* Academic Achievements */}
-          <div className="w-full">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Academic Competencies</h3>
-            <div className="text-center">
-              <img
-                src={academicQualifications[currentAcademicIndex].image}
-                alt="Academic Qualification"
-                className="w-16 h-16 mx-auto mb-2 object-contain" // Reduced size
-              />
-              <h4 className="text-md font-semibold">{academicQualifications[currentAcademicIndex].title}</h4> {/* Reduced font size */}
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p> {/* Reduced font size */}
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p> {/* Reduced font size */}
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p> {/* Reduced font size */}
-              <div className="flex justify-center mt-4 space-x-2">
-                {academicQualifications.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentAcademicIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentAcademicIndex ? "bg-blue-500" : "bg-gray-500"
-                    }`}
-                  ></button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Professional Achievements */}
-          <div className="w-full">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Professional Experience</h3>
-            <div className="text-center">
-              <img src="/assets/engineer.png" alt="Engineer" className="w-24 h-24 mx-auto mb-4 object-contain" />
-              <h4 className="text-lg font-semibold">{professionalAchievements[currentProfessionalIndex].title}</h4>
+        <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
+          <button
+            className="absolute right-0 top-[-10px] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+            onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
+          >
+            Review CV
+          </button>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
+            {/* Professional Achievements */}
+            <div className="w-full sm:w-1/2 text-center">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
+              <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
+              <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
               <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
               <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
               <div className="flex justify-center mt-4 space-x-2">
@@ -338,10 +317,35 @@ export default function App() {
                   <button
                     key={index}
                     onClick={() => {
-                      setAutoSlide(false); 
+                      setAutoSlide(false);
                       setCurrentProfessionalIndex(index);
                     }}
                     className={`w-3 h-3 rounded-full ${index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'}`}
+                  ></button>
+                ))}
+              </div>
+            </div>
+
+            {/* Academic Achievements */}
+            <div className="w-full sm:w-1/2 text-center">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
+              <img
+                src={academicQualifications[currentAcademicIndex].image}
+                alt="Academic Qualification"
+                className="w-20 h-20 mx-auto mb-2 object-contain"
+              />
+              <h4 className="text-md font-semibold mt-2">{academicQualifications[currentAcademicIndex].title}</h4>
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
+              <div className="flex justify-center mt-4 space-x-2">
+                {academicQualifications.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentAcademicIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
+                    }`}
                   ></button>
                 ))}
               </div>
