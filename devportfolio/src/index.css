@@ -13,6 +13,14 @@
     transform: translateX(0); /* Return to starting point */
   }
 }
+button:focus,
+a:focus {
+  outline: none;
+}
+input,
+textarea {
+  display: none;
+}
 
 #project-carousel {
   display: flex;

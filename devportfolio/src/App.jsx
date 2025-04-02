@@ -10,9 +10,41 @@ export default function App() {
   const texts = ['Frandel Wanjawa.', 'a Hardware Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
-  const [direction, setDirection] = useState('down'); 
-  const sections = ['home', 'projects', 'about', 'connect'];
-
+  const [direction, setDirection] = useState('down');
+  const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
+  const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
+  const professionalAchievements = [
+    {
+      title: "AgriX SAT (Satellite Project)",
+      year: "2021 - 2022",
+      description: "Led the development of a satellite project aimed at improving agricultural practices through remote sensing.",
+    },
+    {
+      title: "Project Humanity (Data Science)",
+      year: "2022 - 2023",
+      description: "Worked on data-driven solutions to address global challenges, leveraging machine learning and big data.",
+    },
+    {
+      title: "Embedded Systems Development",
+      year: "2023 - Present",
+      description: "Developing cutting-edge embedded systems for IoT and automation projects.",
+    },
+    {
+      title: "Smart Baby Crib",
+      year: "2020 - 2021",
+      description: "Designed a smart crib with sensors to monitor the baby’s health and environment.",
+    },
+    {
+      title: "Home Automation",
+      year: "2019 - 2020",
+      description: "Developed a system to control home appliances remotely via a web interface.",
+    },
+    {
+      title: "Robotics",
+      year: "2018 - 2019",
+      description: "Built robots for obstacle avoidance and line-following tasks.",
+    },
+  ];
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -30,9 +62,6 @@ export default function App() {
     };
   }, []);
 
-
-
-
   const navigateToSection = (direction) => {
     setCurrentSection((prev) => {
       const newIndex = Math.min(Math.max(prev + direction, 0), sections.length - 1);
@@ -45,7 +74,6 @@ export default function App() {
         }
       }
 
-      // Update the navigation direction
       setDirection(direction === 1 ? 'down' : 'up');
 
       return newIndex;
@@ -59,11 +87,6 @@ export default function App() {
   const handleImageLoad = () => {
     setIsLoading(false);
   };
-
-
-
-
-
 
   useEffect(() => {
     const typeText = () => {
@@ -80,13 +103,13 @@ export default function App() {
 
     if (isTyping) {
       if (charIndex < texts[index].length) {
-        currentTimeout = setTimeout(typeText, 100); // Typing speed
+        currentTimeout = setTimeout(typeText, 150);
       } else {
-        setTimeout(() => setIsTyping(false), 2000); // Pause before erasing
+        setTimeout(() => setIsTyping(false), 2000);
       }
     } else {
       if (charIndex > 0) {
-        currentTimeout = setTimeout(eraseText, 100); // Erasing speed
+        currentTimeout = setTimeout(eraseText, 100);
       } else {
         setIsTyping(true);
         setIndex((prev) => (prev + 1) % texts.length);
@@ -108,7 +131,6 @@ export default function App() {
     setIsMobileMenuOpen(false);
   };
 
-
   const handleMpesaClick = () => {
     try {
       window.location.href = 'https://link.payd.one/REIhZC';
@@ -124,11 +146,9 @@ export default function App() {
     }
   };
 
-  
   return (
     <>
-      <div id="home" className="min-h-screen"
-      >
+      <div id="home" className="min-h-screen">
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
             <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
@@ -141,11 +161,10 @@ export default function App() {
         >
           <nav className="bg-transparent-900 w-full p-3 fixed top-0">
             <div className="container mx-auto flex justify-between items-center">
-
               <div className="flex items-center space-x-2">
                 {!isMobileMenuOpen && (
                   <button
-                  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                     className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
                   >
                     <div className="space-y-1">
@@ -157,8 +176,10 @@ export default function App() {
                 )}
               </div>
               <div
-                className={`fixed top-0 left-0 h-full bg-transparent-900 text-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                  } transition-transform duration-300`}
+                className={`fixed top-0 left-0 h-full bg-transparent-900 text-white z-50 transform ${
+                  isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                } transition-transform duration-300`}
+                onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={handleMobileMenuToggle}
@@ -168,8 +189,20 @@ export default function App() {
                 </button>
                 <ul className="mt-16 space-y-4 px-4">
                   <li>
-                    <a href="#home" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Frandel
+                    <a
+                      href="#home"
+                      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+                      onClick={(event) => {
+                        handleMenuClick();
+                      }}
+                    >
+                      <span role="img" aria-label="Home">🏠</span>
+                      <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
+                      About
                     </a>
                   </li>
                   <li>
@@ -178,8 +211,8 @@ export default function App() {
                     </a>
                   </li>
                   <li>
-                    <a href="/assets/Frandel.pdf" download className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Download Resume
+                    <a href="#certifications" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
+                      Certifications
                     </a>
                   </li>
                   <li>
@@ -188,28 +221,12 @@ export default function App() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Chat
-                    </a>
-                  </li>
-                  <li>
                     <a href="#blogs" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
                       Blogs
                     </a>
                   </li>
-                  <li>
-                    <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      About
-                    </a>
-                  </li>
-
                 </ul>
               </div>
-
-
-
-             
-
             </div>
           </nav>
 
@@ -238,9 +255,62 @@ export default function App() {
           </div>
         )}
       </div>
+      <div
+        id="about"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center px-2"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
+          {/* Academic Achievements */}
+          <div className="w-full">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Academic Achievements</h3>
+            <div className="flex justify-around items-center">
+              <div className="flex flex-col items-center">
+                <img src="/assets/graduationhat.jpeg" alt="Graduation Hat" className="w-16 h-16 object-contain" />
+                <p className="mt-2 text-sm text-gray-300">Bachelor's Degree in Hardware Engineering</p>
+                <p className="text-sm text-gray-300">JKUAT</p>
+                <p className="text-sm text-gray-300">First Class Honors</p>
+                <p className="text-sm text-gray-300">2015 - 2019</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/assets/tie.png" alt="Tie" className="w-16 h-16 object-contain" />
+                <p className="mt-2 text-sm text-gray-300">Data Structures and Algorithms</p>
+                <p className="text-sm text-gray-300">Coursera</p>
+                <p className="text-sm text-gray-300">Certificate of Completion</p>
+                <p className="text-sm text-gray-300">2019 - 2020</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src="/assets/book.png" alt="Book" className="w-16 h-16 object-contain" />
+                <p className="mt-2 text-sm text-gray-300">Satellite Technology</p>
+                <p className="text-sm text-gray-300">JKUAT</p>
+                <p className="text-sm text-gray-300">Distinction</p>
+                <p className="text-sm text-gray-300">2020 - 2021</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Achievements */}
+          <div className="w-full">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Professional Achievements</h3>
+            <div className="text-center">
+              <h4 className="text-lg font-semibold">{professionalAchievements[currentProfessionalIndex].title}</h4>
+              <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
+              <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
+              <div className="flex justify-center mt-4 space-x-2">
+                {professionalAchievements.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentProfessionalIndex(index)}
+                    className={`w-3 h-3 rounded-full ${index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'}`}
+                  ></button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-
         <div className="block sm:hidden w-full ">
           <ul className="space-y-2 mt-16">
             <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
@@ -270,7 +340,6 @@ export default function App() {
             <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
               <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="no-underline">Tafiti cubesat</a>
             </li>
-
           </ul>
         </div>
 
@@ -330,57 +399,54 @@ export default function App() {
             <p className="mt-2 text-sm text-gray-600">Data structures and algos projects</p>
             <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
           </div>
-
         </div>
       </div>
 
-      <div id="about" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center px-4 font-serif">
-          I am a dedicated and experienced software engineer passionate about developing innovative solutions to complex problems. With a strong background in various programming languages and technologies, I specialize in creating efficient, scalable applications. My expertise range from web development to embedded systems and data engineering. I am committed to continuous fast learning and staying up-to-date with the latest advancements in technology to deliver high-quality results. Let's work together to make the world a more habitable place for everyone.
-        </p>
+      <div id="certifications" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+        Certifications
       </div>
+
       <div id="connect" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <div className="flex space-x-1">
+          <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
+            Chat
+          </a>
           <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/github.png')" }} href="https://github.com/franfreezy"></a>
           <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
           <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
         </div>
       </div>
+
+      <div id="blogs" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
+        Blogs
+      </div>
+
       <div
-  className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-  style={{
-    background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
-  }}
->
-<div
-  className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-  style={{
-    background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
-  }}
->
-  <button
-    onClick={() => {
-      if (currentSection === sections.length - 1) {
-        // Navigate up from the last section
-        setDirection('up');
-        navigateToSection(-1);
-      } else if (currentSection === 0) {
-        
-        setDirection('down');
-        navigateToSection(1);
-      } else {
-        
-        const nextDirection = direction === 'down' ? 1 : -1;
-        setDirection(nextDirection === 1 ? 'down' : 'up');
-        navigateToSection(nextDirection);
-      }
-    }}
-    className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300"
-  >
-    {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
-  </button>
-</div>
-</div>
+        className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+        style={{
+          background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
+        }}
+      >
+        <button
+          onClick={() => {
+            if (currentSection === sections.length - 1) {
+              // Navigate up from the last section
+              setDirection('up');
+              navigateToSection(-1);
+            } else if (currentSection === 0) {
+              setDirection('down');
+              navigateToSection(1);
+            } else {
+              const nextDirection = direction === 'down' ? 1 : -1;
+              setDirection(nextDirection === 1 ? 'down' : 'up');
+              navigateToSection(nextDirection);
+            }
+          }}
+          className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300"
+        >
+          {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
+        </button>
+      </div>
     </>
   );
 }
