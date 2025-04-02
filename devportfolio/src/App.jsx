@@ -13,36 +13,57 @@ export default function App() {
   const [direction, setDirection] = useState('down');
   const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
   const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
+  const [autoSlide, setAutoSlide] = useState(true);
   const professionalAchievements = [
     {
-      title: "AgriX SAT (Satellite Project)",
-      year: "2021 - 2022",
-      description: "Led the development of a satellite project aimed at improving agricultural practices through remote sensing.",
+      title: "CEO and Founder FastWare Inc.",
+      year: "2025 April - Current",
+      description: "Leading a team of developers to build cutting-edge solutions that address real-world challenges.",
     },
     {
-      title: "Project Humanity (Data Science)",
-      year: "2022 - 2023",
-      description: "Worked on data-driven solutions to address global challenges, leveraging machine learning and big data.",
+      title: "TT$C Subsystem Lead-Tafiti Project Kenya Space Agency",
+      year: "2024 Jan - 2025 March",
+      description: "Led the communication and Ground Station Subsystem  .",
     },
     {
-      title: "Embedded Systems Development",
-      year: "2023 - Present",
-      description: "Developing cutting-edge embedded systems for IoT and automation projects.",
+      title: "Engineering Intern - Egypro EAst Africa Ltd.",
+      year: "2023 Jan- 2023 May",
+      description: "Maintained Safaricom Boosters.",
     },
     {
-      title: "Smart Baby Crib",
-      year: "2020 - 2021",
-      description: "Designed a smart crib with sensors to monitor the baby’s health and environment.",
+      title: "Engineering Intern- Gearbox and Fedha",
+      year: "2022 Jan  - 2022 May",
+      description: "Developed hardware and firmware for smart devices.",
     },
     {
-      title: "Home Automation",
-      year: "2019 - 2020",
-      description: "Developed a system to control home appliances remotely via a web interface.",
+      title: "Census Enumerator",
+      year: "2019 July - 2019 August ",
+      description: "Collected and relayed data for the 2019 Kenya Census.",
+    },
+    
+  ];
+  const [currentAcademicIndex, setCurrentAcademicIndex] = useState(0);
+  const academicQualifications = [
+    {
+      image: "/assets/graduationhat.jpeg",
+      title: "Bachelor's Degree in Electronic and Computer Engineering",
+      institution: "JKUAT",
+      achievement: "Graduate with Honors",
+      year: "2019 - 2025",
     },
     {
-      title: "Robotics",
-      year: "2018 - 2019",
-      description: "Built robots for obstacle avoidance and line-following tasks.",
+      image: "/assets/tie.png",
+      title: "Kenya Certificate of Secondary Education",
+      institution: "Friends School Kamusinga",
+      achievement: "A-(minus)",
+      year: "2015 - 2018",
+    },
+    {
+      image: "/assets/book.png",
+      title: "Kenya Certificate of Primary Education",
+      institution: "The King David Preparatory- Kolanya",
+      achievement: "400 marks",
+      year: "2014",
     },
   ];
 
@@ -60,6 +81,22 @@ export default function App() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
+  }, []);
+
+  useEffect(() => {
+    if (autoSlide) {
+      const interval = setInterval(() => {
+        setCurrentProfessionalIndex((prevIndex) => (prevIndex + 1) % professionalAchievements.length);
+      }, 10000);
+      return () => clearInterval(interval);
+    }
+  }, [autoSlide, professionalAchievements.length]);
+
+  useEffect(() => {
+    const academicInterval = setInterval(() => {
+      setCurrentAcademicIndex((prevIndex) => (prevIndex + 1) % academicQualifications.length);
+    }, 10000);
+    return () => clearInterval(academicInterval);
   }, []);
 
   const navigateToSection = (direction) => {
@@ -263,36 +300,36 @@ export default function App() {
         <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
           {/* Academic Achievements */}
           <div className="w-full">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Academic Achievements</h3>
-            <div className="flex justify-around items-center">
-              <div className="flex flex-col items-center">
-                <img src="/assets/graduationhat.jpeg" alt="Graduation Hat" className="w-16 h-16 object-contain" />
-                <p className="mt-2 text-sm text-gray-300">Bachelor's Degree in Hardware Engineering</p>
-                <p className="text-sm text-gray-300">JKUAT</p>
-                <p className="text-sm text-gray-300">First Class Honors</p>
-                <p className="text-sm text-gray-300">2015 - 2019</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="/assets/tie.png" alt="Tie" className="w-16 h-16 object-contain" />
-                <p className="mt-2 text-sm text-gray-300">Data Structures and Algorithms</p>
-                <p className="text-sm text-gray-300">Coursera</p>
-                <p className="text-sm text-gray-300">Certificate of Completion</p>
-                <p className="text-sm text-gray-300">2019 - 2020</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="/assets/book.png" alt="Book" className="w-16 h-16 object-contain" />
-                <p className="mt-2 text-sm text-gray-300">Satellite Technology</p>
-                <p className="text-sm text-gray-300">JKUAT</p>
-                <p className="text-sm text-gray-300">Distinction</p>
-                <p className="text-sm text-gray-300">2020 - 2021</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Academic Competencies</h3>
+            <div className="text-center">
+              <img
+                src={academicQualifications[currentAcademicIndex].image}
+                alt="Academic Qualification"
+                className="w-16 h-16 mx-auto mb-2 object-contain" // Reduced size
+              />
+              <h4 className="text-md font-semibold">{academicQualifications[currentAcademicIndex].title}</h4> {/* Reduced font size */}
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p> {/* Reduced font size */}
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p> {/* Reduced font size */}
+              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p> {/* Reduced font size */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {academicQualifications.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentAcademicIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentAcademicIndex ? "bg-blue-500" : "bg-gray-500"
+                    }`}
+                  ></button>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Professional Achievements */}
           <div className="w-full">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Professional Achievements</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4">Professional Experience</h3>
             <div className="text-center">
+              <img src="/assets/engineer.png" alt="Engineer" className="w-24 h-24 mx-auto mb-4 object-contain" />
               <h4 className="text-lg font-semibold">{professionalAchievements[currentProfessionalIndex].title}</h4>
               <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
               <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
@@ -300,7 +337,10 @@ export default function App() {
                 {professionalAchievements.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentProfessionalIndex(index)}
+                    onClick={() => {
+                      setAutoSlide(false); 
+                      setCurrentProfessionalIndex(index);
+                    }}
                     className={`w-3 h-3 rounded-full ${index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'}`}
                   ></button>
                 ))}
