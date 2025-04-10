@@ -367,31 +367,29 @@ export default function App() {
 
 
 
-            <div
+      <div
         id="about"
         className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
-      
+
         {/* Two Small Balls for Small Screens */}
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
-            className={`w-8 h-8 rounded-full transition duration-300 ${
-              activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'
-            }`}
+            className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'
+              }`}
             title="Professional Experience"
           ></button>
           <button
             onClick={() => setActiveContent('academic')}
-            className={`w-8 h-8 rounded-full transition duration-300 ${
-              activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-700'
-            }`}
+            className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-700'
+              }`}
             title="Academic Competencies"
           ></button>
         </div>
-      
+
         {/* Content Display */}
         <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
           {/* For Small Screens: Toggle Content */}
@@ -405,7 +403,7 @@ export default function App() {
                 <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
               </div>
             )}
-      
+
             {activeContent === 'academic' && (
               <div className="w-full text-center">
                 <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
@@ -421,7 +419,7 @@ export default function App() {
               </div>
             )}
           </div>
-      
+
           {/* For Large Screens: Show Both Contents */}
           <div className="hidden sm:flex sm:space-x-8">
             {/* Professional Experience */}
@@ -432,7 +430,7 @@ export default function App() {
               <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
               <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
             </div>
-      
+
             {/* Academic Competencies */}
             <div className="w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
