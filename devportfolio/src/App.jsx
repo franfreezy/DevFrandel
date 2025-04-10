@@ -530,79 +530,78 @@ export default function App() {
 
         {/* Section Title */}
         <div className="relative z-20 text-center mb-12">
-         
+          <h1 className="text-4xl font-bold text-white mb-4">Projects</h1>
           <p className="text-gray-300 max-w-2xl mx-auto px-4">
             Exploring innovation through technology and engineering
           </p>
         </div>
 
-        {/* Mobile View */}
-        <div className="block sm:hidden w-full px-4 relative z-20">
-          <div className="space-y-4 mt-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-gray-900 bg-opacity-80 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
-                <div className="flex items-center space-x-4">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-16 h-16 object-cover rounded-lg"
-                    loading="lazy"
-                  />
-                  <div className="flex-1">
-                    <h3 className="text-white font-semibold">{project.title}</h3>
-                    <p className="text-gray-400 text-sm mt-1">{project.description}</p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      className="inline-block mt-2 text-blue-400 hover:text-blue-300 text-sm"
-                    >
-                      View Project →
-                    </a>
+        {/* Projects Container with Scroll */}
+        <div className="relative z-20 px-4 sm:px-8">
+          <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-200px)] overflow-y-auto">
+            {/* Mobile View */}
+            <div className="block sm:hidden">
+              <div className="space-y-6">
+                {projects.map((project, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden"
+                  >
+                    {/* ... existing mobile project card content ... */}
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop View */}
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-8 max-w-7xl mx-auto relative z-20">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-gray-900 bg-opacity-80 rounded-lg p-6 transform transition-all duration-300 hover:scale-105 hover:bg-opacity-90 group"
-            >
-              <div className="relative overflow-hidden rounded-lg mb-4 h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg transform -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
-                  >
-                    {tech}
-                  </span>
                 ))}
               </div>
             </div>
-          ))}
+
+            {/* Desktop View */}
+            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[90rem] mx-auto">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group"
+                >
+                  <div className="relative h-48">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg transform -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                      >
+                        View Project
+                      </a>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="relative z-20 text-center mt-4 text-gray-400">
+          <p className="text-sm">Scroll to explore more projects</p>
+          <div className="animate-bounce mt-2">↓</div>
         </div>
       </div>
 
