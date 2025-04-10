@@ -7,7 +7,7 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.', 'a Hardware Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
+  const texts = ['Frandel Wanjawa.','a Software Engineer.',  'a Hardware Engineer.', 'a Data Engineer.', 'an SDG champion .'];
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState('down');
@@ -331,19 +331,24 @@ export default function App() {
           </div>
         )}
       </div>
-      <div
+            <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center px-2"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+      
+        {/* Content */}
+        <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
           <button
-            className="absolute right-0 top-[-10px] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+            className="absolute right-4 top-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
             onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
           >
             Review CV
           </button>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
+      
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-7xl">
             {/* Professional Achievements */}
             <div className="w-full sm:w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
@@ -364,7 +369,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-
+      
             {/* Academic Achievements */}
             <div className="w-full sm:w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
@@ -390,6 +395,67 @@ export default function App() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      
+
+      <div
+        id="projects"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        {/* Content */}
+        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
+          <h1 className="text-center text-4xl font-bold">Projects</h1>
+          {/* Add your content here */}
+        </div>
+      </div>
+
+      <div
+        id="certifications"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        {/* Content */}
+        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
+          <h1 className="text-center text-4xl font-bold">Certifications</h1>
+          {/* Add your content here */}
+        </div>
+      </div>
+
+      <div
+        id="connect"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        {/* Content */}
+        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
+          <h1 className="text-center text-4xl font-bold">Connect</h1>
+          {/* Add your content here */}
+        </div>
+      </div>
+
+      <div
+        id="blogs"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        {/* Content */}
+        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
+          <h1 className="text-center text-4xl font-bold">Blogs</h1>
+          {/* Add your content here */}
         </div>
       </div>
 
