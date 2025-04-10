@@ -7,7 +7,7 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.','a Software Engineer.',  'a Hardware Engineer.', 'a Data Engineer.', 'an SDG champion .'];
+  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a Hardware Engineer.', 'a Data Engineer.', 'an SDG champion .'];
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState('down');
@@ -40,7 +40,7 @@ export default function App() {
       year: "2019 July - 2019 August ",
       description: "Collected and relayed data for the 2019 Kenya Census.",
     },
-    
+
   ];
   const [currentAcademicIndex, setCurrentAcademicIndex] = useState(0);
   const academicQualifications = [
@@ -185,57 +185,16 @@ export default function App() {
 
   return (
     <>
-      <div
-        id="home"
-        className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center relative"
-        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
-        onLoad={handleImageLoad}
-      >
-        
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
-
-        
-        <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
-          <div className="container flex items-center">
-            <div className="flex items-center w-full">
-              {!isMobileMenuOpen && (
-                <button
-                  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                  className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300 z-50"
-                >
-                  <div className="space-y-1">
-                    <div className="w-6 h-1 bg-white"></div>
-                    <div className="w-6 h-1 bg-white"></div>
-                    <div className="w-6 h-1 bg-white"></div>
-                  </div>
-                </button>
-              )}
-            </div>
-          </div>
-        </nav>
-
-        
-        <div className="z-10">
-          <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
-        </div>
-
-        
-        <div className="z-10 mt-4 sm:mt-10">
-          <h1 className="text-center text-white text-2xl sm:text-4xl animate-bounce">I am {displayedText}</h1>
-        </div>
-      </div>
       <div id="home" className="min-h-screen">
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
-            <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin z-100"></div>
           </div>
         )}
-        <div
-          className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center"
-          style={{ backgroundImage: "url('/assets/img3.jpg')" }}
-          onLoad={handleImageLoad}
-        >
-          <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
+        {!isLoading && (
+          <>
+            {/* Navigation Bar */}
+            <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
             <div className="container  flex   items-center">
               <div className="flex  items-center w-full">
                 {!isMobileMenuOpen && (
@@ -253,9 +212,8 @@ export default function App() {
               </div>
               <div className="relative" style={{ overflow: 'visible' }}>
                 <div
-                  className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${
-                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                  } transition-transform duration-300`}
+                  className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                    } transition-transform duration-300`}
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button
@@ -326,40 +284,102 @@ export default function App() {
             </div>
           </nav>
 
-          <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
-          <br />
-          <h1 className="text-center text-white text-2xl sm:text-4xl mt-4 sm:mt-0">I am {displayedText}</h1>
-        </div>
+            {/* Donate Button */}
+            <button
+              onClick={handleDropdownToggle}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
+            >
+              Donate
+            </button>
 
-        <button
-          onClick={handleDropdownToggle}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
-        >
-          Donate
-        </button>
-
-        {isDropdownOpen && (
-          <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg z-50">
-            <ul>
-              <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
-                M-Pesa
-              </li>
-              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
-                Diaspora
-              </li>
-            </ul>
-          </div>
-        )}
-      </div>
+            {/* Scroll Button */}
             <div
+              className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50"
+              style={{
+                background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
+              }}
+            >
+              <button
+                onClick={() => {
+                  if (currentSection === sections.length - 1) {
+                    setDirection('up');
+                    navigateToSection(-1);
+                  } else if (currentSection === 0) {
+                    setDirection('down');
+                    navigateToSection(1);
+                  } else {
+                    const nextDirection = direction === 'down' ? 1 : -1;
+                    setDirection(nextDirection === 1 ? 'down' : 'up');
+                    navigateToSection(nextDirection);
+                  }
+                }}
+                className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300 z-50"
+              >
+                {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
+              </button>
+            </div>
+          </>
+        )}
+        <div
+          className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center relative"
+          style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+          onLoad={handleImageLoad}
+        >
+
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
+
+
+          
+
+
+          <div className="z-10">
+            <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
+          </div>
+
+
+          <div className="z-10 mt-4 sm:mt-10">
+            <h1 className="text-center text-white text-2xl sm:text-4xl animate-bounce">I am {displayedText}</h1>
+          </div>
+
+          <button
+            onClick={handleDropdownToggle}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
+          >
+            Donate
+          </button>
+
+          {isDropdownOpen && (
+            <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg z-50">
+              <ul>
+                <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
+                  M-Pesa
+                </li>
+                <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
+                  Diaspora
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+
+
+
+
+     
+
+
+
+
+      <div
         id="about"
         className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative "
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        
+
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
-      
-        
+
+
         <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
           <button
             className="absolute right-4 top-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 z-50"
@@ -367,7 +387,7 @@ export default function App() {
           >
             Review CV
           </button>
-      
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-7xl">
             {/* Professional Achievements */}
             <div className="w-full sm:w-1/2 text-center">
@@ -389,7 +409,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-      
+
             {/* Academic Achievements */}
             <div className="w-full sm:w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
@@ -407,9 +427,8 @@ export default function App() {
                   <button
                     key={index}
                     onClick={() => setCurrentAcademicIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
-                    }`}
+                    className={`w-3 h-3 rounded-full ${index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
+                      }`}
                   ></button>
                 ))}
               </div>
@@ -417,7 +436,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      
+
 
       <div
         id="projects"
@@ -590,31 +609,7 @@ export default function App() {
         Blogs
       </div>
 
-      <div
-        className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50" 
-        style={{
-          background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
-        }}
-      >
-        <button
-          onClick={() => {
-            if (currentSection === sections.length - 1) {
-              setDirection('up');
-              navigateToSection(-1);
-            } else if (currentSection === 0) {
-              setDirection('down');
-              navigateToSection(1);
-            } else {
-              const nextDirection = direction === 'down' ? 1 : -1;
-              setDirection(nextDirection === 1 ? 'down' : 'up');
-              navigateToSection(nextDirection);
-            }
-          }}
-          className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300 z-50" 
-        >
-          {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
-        </button>
-      </div>
+      
     </>
   );
 }
