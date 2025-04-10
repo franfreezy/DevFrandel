@@ -197,8 +197,8 @@ export default function App() {
           onLoad={handleImageLoad}
         >
           <nav className="bg-transparent-900 w-full p-3 fixed top-0">
-            <div className="container mx-auto flex justify-between items-center">
-              <div className="flex items-center space-x-2">
+            <div className="container  flex   items-center">
+              <div className="flex  items-center w-full">
                 {!isMobileMenuOpen && (
                   <button
                     onClick={() => setIsMobileMenuOpen((prev) => !prev)}
