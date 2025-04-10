@@ -365,67 +365,101 @@ export default function App() {
         </div>
       </div>
 
+            // Replace the existing About section with this improved version
       <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col sm:flex-row justify-center relative"
+        className="min-h-screen w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-
-        {/* Two Balls for Mobile */}
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4 sm:hidden">
+      
+        {/* Section Title for Mobile */}
+        <div className="absolute top-4 w-full text-center z-20">
+          <h1 className="text-2xl font-bold text-white mb-2">About Me</h1>
+        </div>
+      
+        {/* Toggle Buttons for Mobile */}
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20 flex space-x-8 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
-            className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'
-              }`}
-          ></button>
+            className={`flex flex-col items-center transition duration-300`}
+          >
+            <div className={`w-10 h-10 rounded-full ${
+              activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500'
+            } mb-2`}></div>
+            <span className={`text-sm text-white ${
+              activeContent === 'professional' ? 'font-bold' : ''
+            }`}>Professional</span>
+          </button>
           <button
             onClick={() => setActiveContent('academic')}
-            className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-700'
-              }`}
-          ></button>
+            className={`flex flex-col items-center transition duration-300`}
+          >
+            <div className={`w-10 h-10 rounded-full ${
+              activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500'
+            } mb-2`}></div>
+            <span className={`text-sm text-white ${
+              activeContent === 'academic' ? 'font-bold' : ''
+            }`}>Academic</span>
+          </button>
         </div>
-
-        {/* Professional Experience - Left Half */}
-        <div className={`z-20 w-full sm:w-1/2 h-full p-6 ${activeContent === 'professional' ? 'block' : 'hidden sm:block'}`}>
-          <div className="bg-black bg-opacity-50 h-full rounded-lg p-6 overflow-y-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Professional Experience</h2>
-            {professionalAchievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="mb-8 bg-gray-900 bg-opacity-50 p-4 rounded-lg"
-              >
-                <h3 className="text-xl font-semibold text-blue-400">{achievement.title}</h3>
-                <p className="text-gray-400 mt-1">{achievement.year}</p>
-                <p className="text-white mt-2">{achievement.description}</p>
+      
+        {/* Content Container */}
+        <div className="relative z-20 pt-32 sm:pt-0 sm:flex">
+          {/* Professional Experience */}
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${
+            activeContent === 'professional' ? 'block' : 'hidden sm:block'
+          }`}>
+            <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
+              <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
+                Professional Experience
+              </h2>
+              <div className="space-y-4">
+                {professionalAchievements.map((achievement, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-900 bg-opacity-50 p-4 rounded-lg transform transition-all duration-300 hover:scale-102 hover:bg-opacity-70"
+                  >
+                    <h3 className="text-lg font-semibold text-blue-400">{achievement.title}</h3>
+                    <p className="text-gray-400 text-sm mt-1">{achievement.year}</p>
+                    <p className="text-white text-sm mt-2">{achievement.description}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-
-        {/* Academic Competencies - Right Half */}
-        <div className={`z-20 w-full sm:w-1/2 h-full p-6 ${activeContent === 'academic' ? 'block' : 'hidden sm:block'}`}>
-          <div className="bg-black bg-opacity-50 h-full rounded-lg p-6 overflow-y-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Academic Competencies</h2>
-            {academicQualifications.map((qualification, index) => (
-              <div
-                key={index}
-                className="mb-8 bg-gray-900 bg-opacity-50 p-4 rounded-lg flex items-start gap-4"
-              >
-                <img
-                  src={qualification.image}
-                  alt={qualification.title}
-                  className="w-16 h-16 object-cover rounded"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-green-400">{qualification.title}</h3>
-                  <p className="text-white mt-1">{qualification.institution}</p>
-                  <p className="text-gray-400">{qualification.achievement}</p>
-                  <p className="text-gray-400">{qualification.year}</p>
-                </div>
+      
+          {/* Academic Qualifications */}
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${
+            activeContent === 'academic' ? 'block' : 'hidden sm:block'
+          }`}>
+            <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
+              <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
+                Academic Qualifications
+              </h2>
+              <div className="space-y-4">
+                {academicQualifications.map((qualification, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-900 bg-opacity-50 p-4 rounded-lg flex gap-4 transform transition-all duration-300 hover:scale-102 hover:bg-opacity-70"
+                  >
+                    <img
+                      src={qualification.image}
+                      alt={qualification.title}
+                      className="w-12 h-12 object-cover rounded-full"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h3 className="text-lg font-semibold text-green-400">{qualification.title}</h3>
+                      <p className="text-white text-sm">{qualification.institution}</p>
+                      <p className="text-gray-400 text-sm">{qualification.achievement}</p>
+                      <p className="text-gray-400 text-sm">{qualification.year}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
