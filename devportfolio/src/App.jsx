@@ -530,7 +530,7 @@ export default function App() {
 
         {/* Section Title */}
         <div className="relative z-20 text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Projects</h1>
+          
           <p className="text-gray-300 max-w-2xl mx-auto px-4">
             Exploring innovation through technology and engineering
           </p>
@@ -541,15 +541,50 @@ export default function App() {
           <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-200px)] overflow-y-auto">
             {/* Mobile View */}
             <div className="block sm:hidden">
-              <div className="space-y-6">
-                {projects.map((project, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden"
-                  >
-                    {/* ... existing mobile project card content ... */}
-                  </div>
-                ))}
+              <div className="block sm:hidden w-full px-4 relative z-20">
+                <div className="space-y-6">
+                  {projects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-102"
+                    >
+                      <div className="relative h-48">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
+                        <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          {project.technologies.map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        >
+                          View Project
+                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
