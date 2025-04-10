@@ -421,10 +421,10 @@ export default function App() {
           </div>
 
           {/* For Large Screens: Show Both Contents */}
-          <div className="hidden sm:flex sm:space-x-8">
+          <div className="hidden sm:flex sm:space-x-2">
             {/* Professional Experience */}
             <div className="w-1/2 text-center">
-              <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
+              <h2 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h2>
               <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
               <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
               <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
