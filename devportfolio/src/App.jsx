@@ -16,7 +16,7 @@ export default function App() {
   const [autoSlide, setAutoSlide] = useState(true);
   const professionalAchievements = [
     {
-      title: "CEO and Founder FastWare Inc.",
+      title: "CEO and Founder Tethics Electrics Grp.",
       year: "2025 April - Current",
       description: "Leading a team of developers to build cutting-edge solutions that address real-world challenges.",
     },
@@ -192,16 +192,16 @@ export default function App() {
         onLoad={handleImageLoad}
       >
         
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
 
         
-        <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-10">
+        <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
           <div className="container flex items-center">
             <div className="flex items-center w-full">
               {!isMobileMenuOpen && (
                 <button
                   onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                  className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                  className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300 z-50"
                 >
                   <div className="space-y-1">
                     <div className="w-6 h-1 bg-white"></div>
@@ -220,7 +220,7 @@ export default function App() {
         </div>
 
         
-        <div className="z-10 mt-16 sm:mt-0">
+        <div className="z-10 mt-4 sm:mt-10">
           <h1 className="text-center text-white text-2xl sm:text-4xl animate-bounce">I am {displayedText}</h1>
         </div>
       </div>
@@ -235,7 +235,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/img3.jpg')" }}
           onLoad={handleImageLoad}
         >
-          <nav className="bg-transparent-900 w-full p-3 fixed top-0">
+          <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
             <div className="container  flex   items-center">
               <div className="flex  items-center w-full">
                 {!isMobileMenuOpen && (
@@ -251,57 +251,77 @@ export default function App() {
                   </button>
                 )}
               </div>
-              <div
-                className={`fixed top-0 left-0 h-full bg-transparent-900 text-white z-50 transform ${
-                  isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                } transition-transform duration-300`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={handleMobileMenuToggle}
-                  className="absolute top-4 right-4 text-white"
+              <div className="relative" style={{ overflow: 'visible' }}>
+                <div
+                  className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${
+                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                  } transition-transform duration-300`}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  ✕
-                </button>
-                <ul className="mt-16 space-y-4 px-4">
-                  <li>
-                    <a
-                      href="#home"
-                      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-                      onClick={(event) => {
-                        handleMenuClick();
-                      }}
-                    >
-                      <span role="img" aria-label="Home">🏠</span>
-                      <span>Home</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#projects" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#certifications" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Certifications
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#connect" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Connect
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#blogs" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Blogs
-                    </a>
-                  </li>
-                </ul>
+                  <button
+                    onClick={handleMobileMenuToggle}
+                    className="absolute top-4 right-4 text-white z-50"
+                  >
+                    ✕
+                  </button>
+                  <ul className="mt-16 space-y-4 px-4 z-100">
+                    <li>
+                      <a
+                        href="#home"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+                        onClick={handleMenuClick}
+                      >
+                        <span role="img" aria-label="Home">🏠</span>
+                        <span>Home</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#about"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                        onClick={handleMenuClick}
+                      >
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#projects"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                        onClick={handleMenuClick}
+                      >
+                        Projects
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#certifications"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                        onClick={handleMenuClick}
+                      >
+                        Certifications
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#connect"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                        onClick={handleMenuClick}
+                      >
+                        Connect
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#blogs"
+                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                        onClick={handleMenuClick}
+                      >
+                        Blogs
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </nav>
@@ -319,7 +339,7 @@ export default function App() {
         </button>
 
         {isDropdownOpen && (
-          <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg">
+          <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg z-50">
             <ul>
               <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
                 M-Pesa
@@ -333,16 +353,16 @@ export default function App() {
       </div>
             <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative "
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+        
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
       
-        {/* Content */}
+        
         <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
           <button
-            className="absolute right-4 top-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+            className="absolute right-4 top-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 z-50"
             onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
           >
             Review CV
@@ -571,7 +591,7 @@ export default function App() {
       </div>
 
       <div
-        className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+        className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50" 
         style={{
           background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
         }}
@@ -579,7 +599,6 @@ export default function App() {
         <button
           onClick={() => {
             if (currentSection === sections.length - 1) {
-              // Navigate up from the last section
               setDirection('up');
               navigateToSection(-1);
             } else if (currentSection === 0) {
@@ -591,7 +610,7 @@ export default function App() {
               navigateToSection(nextDirection);
             }
           }}
-          className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300"
+          className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300 z-50" 
         >
           {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
         </button>
