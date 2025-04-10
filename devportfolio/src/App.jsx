@@ -14,6 +14,71 @@ export default function App() {
   const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
   const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
+  const projects = [
+    {
+      title: "Project Humanity",
+      description: "Data analysis on UN datasets for humanitarian insights",
+      image: "/assets/undata.png",
+      link: "https://github.com/franfreezy/dataScience",
+      technologies: ["Python", "Pandas", "Data Analysis"]
+    },
+    {
+      title: "AgriX Cubesat",
+      description: "JKUAT Satellite project for agricultural monitoring",
+      image: "/assets/agrisat.png",
+      link: "https://agroxsatsite.onrender.com",
+      technologies: ["Hardware", "Space Tech", "IoT"]
+    },
+    {
+      title: "Tafiti Cubesat",
+      description: "TAFITI satellite project for space research",
+      image: "/assets/tafiti.jpeg",
+      link: "https://www.linkedin.com/company/tafiti-cubesat/",
+      technologies: ["Space Tech", "Engineering", "Research"]
+    },
+    {
+      title: "Smart Baby Crib",
+      description: "IoT-enabled baby crib with monitoring sensors",
+      image: "/assets/babycrib.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["IoT", "Arduino", "Sensors"]
+    },
+    {
+      title: "Home Automation",
+      description: "Web-controlled home automation system",
+      image: "/assets/homeauto.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["IoT", "Web Control", "Automation"]
+    },
+    {
+      title: "Robotics Project",
+      description: "Autonomous robot with obstacle avoidance",
+      image: "/assets/robot.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["Robotics", "Arduino", "Sensors"]
+    },
+    {
+      title: "Aviator Bot",
+      description: "Data mining bot for aviator platform",
+      image: "/assets/aviator.jpeg",
+      link: "https://github.com/franfreezy/AviatorBot",
+      technologies: ["Python", "Data Mining", "Automation"]
+    },
+    {
+      title: "Data Platform",
+      description: "Full-stack financial data platform",
+      image: "/assets/reactdjango.png",
+      link: "https://github.com/franfreezy/FinancialAndMacroeconomicPlatform",
+      technologies: ["React", "Django", "Full Stack"]
+    },
+    {
+      title: "DSA Projects",
+      description: "Data structures and algorithms implementations",
+      image: "/assets/dsa.png",
+      link: "https://github.com/franfreezy/DSA2.0",
+      technologies: ["DSA", "Python", "Algorithms"]
+    }
+  ];
   const professionalAchievements = [
     {
       title: "CEO and Founder Tethics Electrics Grp.",
@@ -365,7 +430,7 @@ export default function App() {
         </div>
       </div>
 
-          
+
       <div
         id="about"
         className="min-h-screen w-full bg-cover bg-center relative"
@@ -373,41 +438,36 @@ export default function App() {
       >
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-      
-        
-      
+
+
+
         {/* Toggle Buttons for Mobile */}
         <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-50 flex space-x-8 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
             className={`flex flex-col items-center transition duration-300`}
           >
-            <div className={`w-10 h-10 rounded-full ${
-              activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500'
-            } mb-2`}></div>
-            <span className={`text-sm text-white ${
-              activeContent === 'professional' ? 'font-bold' : ''
-            }`}>Professional</span>
+            <div className={`w-10 h-10 rounded-full ${activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500'
+              } mb-2`}></div>
+            <span className={`text-sm text-white ${activeContent === 'professional' ? 'font-bold' : ''
+              }`}>Professional</span>
           </button>
           <button
             onClick={() => setActiveContent('academic')}
             className={`flex flex-col items-center transition duration-300`}
           >
-            <div className={`w-10 h-10 rounded-full ${
-              activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500'
-            } mb-2`}></div>
-            <span className={`text-sm text-white ${
-              activeContent === 'academic' ? 'font-bold' : ''
-            }`}>Academic</span>
+            <div className={`w-10 h-10 rounded-full ${activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500'
+              } mb-2`}></div>
+            <span className={`text-sm text-white ${activeContent === 'academic' ? 'font-bold' : ''
+              }`}>Academic</span>
           </button>
         </div>
-      
+
         {/* Content Container */}
         <div className="relative z-20 pt-32 sm:pt-0 sm:flex">
           {/* Professional Experience */}
-          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${
-            activeContent === 'professional' ? 'block' : 'hidden sm:block'
-          }`}>
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${activeContent === 'professional' ? 'block' : 'hidden sm:block'
+            }`}>
             <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
               <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
                 Professional Experience
@@ -426,11 +486,10 @@ export default function App() {
               </div>
             </div>
           </div>
-      
+
           {/* Academic Qualifications */}
-          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${
-            activeContent === 'academic' ? 'block' : 'hidden sm:block'
-          }`}>
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${activeContent === 'academic' ? 'block' : 'hidden sm:block'
+            }`}>
             <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
               <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
                 Academic Qualifications
@@ -463,16 +522,87 @@ export default function App() {
 
       <div
         id="projects"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        className="min-h-screen w-full bg-cover bg-center relative py-16"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
-        {/* Content */}
-        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
-          <h1 className="text-center text-4xl font-bold">Projects</h1>
-          {/* Add your content here */}
+        {/* Section Title */}
+        <div className="relative z-20 text-center mb-12">
+         
+          <p className="text-gray-300 max-w-2xl mx-auto px-4">
+            Exploring innovation through technology and engineering
+          </p>
+        </div>
+
+        {/* Mobile View */}
+        <div className="block sm:hidden w-full px-4 relative z-20">
+          <div className="space-y-4 mt-8">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-gray-900 bg-opacity-80 rounded-lg p-4 transform transition-all duration-300 hover:scale-105">
+                <div className="flex items-center space-x-4">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-16 h-16 object-cover rounded-lg"
+                    loading="lazy"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-white font-semibold">{project.title}</h3>
+                    <p className="text-gray-400 text-sm mt-1">{project.description}</p>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="inline-block mt-2 text-blue-400 hover:text-blue-300 text-sm"
+                    >
+                      View Project →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop View */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-8 max-w-7xl mx-auto relative z-20">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 bg-opacity-80 rounded-lg p-6 transform transition-all duration-300 hover:scale-105 hover:bg-opacity-90 group"
+            >
+              <div className="relative overflow-hidden rounded-lg mb-4 h-48">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg transform -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -521,101 +651,8 @@ export default function App() {
         </div>
       </div>
 
-      <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <div className="block sm:hidden w-full ">
-          <ul className="space-y-2 mt-16">
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://agroxsatsite.onrender.com" target="_blank" className="no-underline">AgriX cubesat</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="no-underline">DSA</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Smart baby crib</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Home automation</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Robotics</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="no-underline">Aviator bot</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="no-underline">Django React</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="no-underline">Tafiti cubesat</a>
-            </li>
-          </ul>
-        </div>
 
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-16 ">
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/undata.png" alt="UN data" className="w-full h-12 object-cover rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Project Humanity</h2>
-            <p className="mt-2 text-sm text-gray-600">Data analysis on Data from UN</p>
-            <a href="https://github.com/franfreezy/dataScience" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/agrisat.png" alt="AgriX sat" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">AgriX SAT</h2>
-            <p className="mt-2 text-sm text-gray-600">JKUAT Satellite project </p>
-            <a href="https://agroxsatsite.onrender.com" target="_blank" className="mt-4 text-black-500 no-underline">Visit website</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/tafiti.jpeg" alt="Tafiti" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Tafiti cubesat</h2>
-            <p className="mt-2 text-sm text-gray-600">TAFITI satellite project</p>
-            <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="mt-4 text-black-500 no-underline">View on LinkedIn</a>
-          </div>
 
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/babycrib.jpeg" alt="babycrib" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Smart baby crib</h2>
-            <p className="mt-2 text-sm text-gray-600">Baby crib with sensors to monitor the baby </p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/homeauto.jpeg" alt="HomeAuto" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Home automation</h2>
-            <p className="mt-2 text-sm text-gray-600">Controlling switches and lamps via the web</p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/robot.jpeg" alt="Robotics" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Robotics</h2>
-            <p className="mt-2 text-sm text-gray-600">Obstacle avoidance and line following</p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/aviator.jpeg" alt="Aviator" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Aviator bot</h2>
-            <p className="mt-2 text-sm text-gray-600">Bot to mine data in aviator</p>
-            <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/reactdjango.png" alt="Data platform" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Django React</h2>
-            <p className="mt-2 text-sm text-gray-600">Backend-Frontend Data platform</p>
-            <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/dsa.png" alt="DSA" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">DSA</h2>
-            <p className="mt-2 text-sm text-gray-600">Data structures and algos projects</p>
-            <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="certifications" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        Certifications
-      </div>
 
       <div id="connect" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
         <div className="flex space-x-1">
