@@ -365,85 +365,67 @@ export default function App() {
         </div>
       </div>
 
-
-
       <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
+        className="h-screen w-full bg-cover bg-center flex flex-col sm:flex-row justify-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
-        {/* Two Small Balls for Small Screens */}
+        {/* Two Balls for Mobile */}
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
             className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'
               }`}
-            title="Professional Experience"
           ></button>
           <button
             onClick={() => setActiveContent('academic')}
             className={`w-8 h-8 rounded-full transition duration-300 ${activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-700'
               }`}
-            title="Academic Competencies"
           ></button>
         </div>
 
-        {/* Content Display */}
-        <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
-          {/* For Small Screens: Toggle Content */}
-          <div className="sm:hidden">
-            {activeContent === 'professional' && (
-              <div className="w-full text-center">
-                <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
-                <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
-                <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
-                <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
-                <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
+        {/* Professional Experience - Left Half */}
+        <div className={`z-20 w-full sm:w-1/2 h-full p-6 ${activeContent === 'professional' ? 'block' : 'hidden sm:block'}`}>
+          <div className="bg-black bg-opacity-50 h-full rounded-lg p-6 overflow-y-auto">
+            <h2 className="text-3xl font-bold text-white mb-6">Professional Experience</h2>
+            {professionalAchievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="mb-8 bg-gray-900 bg-opacity-50 p-4 rounded-lg"
+              >
+                <h3 className="text-xl font-semibold text-blue-400">{achievement.title}</h3>
+                <p className="text-gray-400 mt-1">{achievement.year}</p>
+                <p className="text-white mt-2">{achievement.description}</p>
               </div>
-            )}
-
-            {activeContent === 'academic' && (
-              <div className="w-full text-center">
-                <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
-                <img
-                  src={academicQualifications[currentAcademicIndex].image}
-                  alt="Academic Qualification"
-                  className="w-20 h-20 mx-auto mb-2 object-contain"
-                />
-                <h4 className="text-md font-semibold mt-2">{academicQualifications[currentAcademicIndex].title}</h4>
-                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
-                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
-                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
-              </div>
-            )}
+            ))}
           </div>
+        </div>
 
-          {/* For Large Screens: Show Both Contents */}
-          <div className="hidden sm:flex sm:space-x-2">
-            {/* Professional Experience */}
-            <div className="w-1/2 text-center">
-              <h2 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h2>
-              <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
-              <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
-              <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
-              <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
-            </div>
-
-            {/* Academic Competencies */}
-            <div className="w-1/2 text-center">
-              <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
-              <img
-                src={academicQualifications[currentAcademicIndex].image}
-                alt="Academic Qualification"
-                className="w-20 h-20 mx-auto mb-2 object-contain"
-              />
-              <h4 className="text-md font-semibold mt-2">{academicQualifications[currentAcademicIndex].title}</h4>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
-            </div>
+        {/* Academic Competencies - Right Half */}
+        <div className={`z-20 w-full sm:w-1/2 h-full p-6 ${activeContent === 'academic' ? 'block' : 'hidden sm:block'}`}>
+          <div className="bg-black bg-opacity-50 h-full rounded-lg p-6 overflow-y-auto">
+            <h2 className="text-3xl font-bold text-white mb-6">Academic Competencies</h2>
+            {academicQualifications.map((qualification, index) => (
+              <div
+                key={index}
+                className="mb-8 bg-gray-900 bg-opacity-50 p-4 rounded-lg flex items-start gap-4"
+              >
+                <img
+                  src={qualification.image}
+                  alt={qualification.title}
+                  className="w-16 h-16 object-cover rounded"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-green-400">{qualification.title}</h3>
+                  <p className="text-white mt-1">{qualification.institution}</p>
+                  <p className="text-gray-400">{qualification.achievement}</p>
+                  <p className="text-gray-400">{qualification.year}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
