@@ -185,6 +185,45 @@ export default function App() {
 
   return (
     <>
+      <div
+        id="home"
+        className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center relative"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+        onLoad={handleImageLoad}
+      >
+        
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
+
+        
+        <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-10">
+          <div className="container flex items-center">
+            <div className="flex items-center w-full">
+              {!isMobileMenuOpen && (
+                <button
+                  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                  className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                >
+                  <div className="space-y-1">
+                    <div className="w-6 h-1 bg-white"></div>
+                    <div className="w-6 h-1 bg-white"></div>
+                    <div className="w-6 h-1 bg-white"></div>
+                  </div>
+                </button>
+              )}
+            </div>
+          </div>
+        </nav>
+
+        
+        <div className="z-10">
+          <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
+        </div>
+
+        
+        <div className="z-10 mt-16 sm:mt-0">
+          <h1 className="text-center text-white text-2xl sm:text-4xl animate-bounce">I am {displayedText}</h1>
+        </div>
+      </div>
       <div id="home" className="min-h-screen">
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
