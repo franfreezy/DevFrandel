@@ -367,28 +367,14 @@ export default function App() {
 
 
 
-      <div
+            <div
         id="about"
         className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
-
-        {/* Two Small Balls */}
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4">
-          <button
-            onClick={() => setCurrentAcademicIndex(0)}
-            className="w-8 h-8 bg-blue-500 rounded-full hover:bg-blue-700 transition duration-300"
-            title="Academic Competencies"
-          ></button>
-          <button
-            onClick={() => setCurrentProfessionalIndex(0)}
-            className="w-8 h-8 bg-green-500 rounded-full hover:bg-green-700 transition duration-300"
-            title="Professional Experience"
-          ></button>
-        </div>
-
-        {/* Two Small Balls */}
+      
+        {/* Two Small Balls for Small Screens */}
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
@@ -405,32 +391,50 @@ export default function App() {
             title="Academic Competencies"
           ></button>
         </div>
-
+      
         {/* Content Display */}
         <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
-          {activeContent === 'professional' && (
-            <div className="w-full sm:w-1/2 text-center">
+          {/* For Small Screens: Toggle Content */}
+          <div className="sm:hidden">
+            {activeContent === 'professional' && (
+              <div className="w-full text-center">
+                <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
+                <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
+                <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
+                <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
+                <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
+              </div>
+            )}
+      
+            {activeContent === 'academic' && (
+              <div className="w-full text-center">
+                <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
+                <img
+                  src={academicQualifications[currentAcademicIndex].image}
+                  alt="Academic Qualification"
+                  className="w-20 h-20 mx-auto mb-2 object-contain"
+                />
+                <h4 className="text-md font-semibold mt-2">{academicQualifications[currentAcademicIndex].title}</h4>
+                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
+                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
+                <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
+              </div>
+            )}
+          </div>
+      
+          {/* For Large Screens: Show Both Contents */}
+          <div className="hidden sm:flex sm:space-x-8">
+            {/* Professional Experience */}
+            <div className="w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
               <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
               <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
               <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
               <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
-              <div className="flex justify-center mt-4 space-x-2">
-                {professionalAchievements.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentProfessionalIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'
-                    }`}
-                  ></button>
-                ))}
-              </div>
             </div>
-          )}
-
-          {activeContent === 'academic' && (
-            <div className="w-full sm:w-1/2 text-center">
+      
+            {/* Academic Competencies */}
+            <div className="w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
               <img
                 src={academicQualifications[currentAcademicIndex].image}
@@ -441,22 +445,10 @@ export default function App() {
               <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
               <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
               <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
-              <div className="flex justify-center mt-4 space-x-2">
-                {academicQualifications.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentAcademicIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
-                    }`}
-                  ></button>
-                ))}
-              </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
-
 
       <div
         id="projects"
