@@ -365,7 +365,7 @@ export default function App() {
         </div>
       </div>
 
-            // Replace the existing About section with this improved version
+          
       <div
         id="about"
         className="min-h-screen w-full bg-cover bg-center relative"
@@ -374,10 +374,7 @@ export default function App() {
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
       
-        {/* Section Title for Mobile */}
-        <div className="absolute top-4 w-full text-center z-20">
-          <h1 className="text-2xl font-bold text-white mb-2">About Me</h1>
-        </div>
+        
       
         {/* Toggle Buttons for Mobile */}
         <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20 flex space-x-8 sm:hidden">
