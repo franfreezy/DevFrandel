@@ -67,6 +67,8 @@ export default function App() {
     },
   ];
 
+  const [activeContent, setActiveContent] = useState('professional');
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowDown') {
@@ -195,94 +197,94 @@ export default function App() {
           <>
             {/* Navigation Bar */}
             <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
-            <div className="container  flex   items-center">
-              <div className="flex  items-center w-full">
-                {!isMobileMenuOpen && (
-                  <button
-                    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                    className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+              <div className="container  flex   items-center">
+                <div className="flex  items-center w-full">
+                  {!isMobileMenuOpen && (
+                    <button
+                      onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                      className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                    >
+                      <div className="space-y-1">
+                        <div className="w-6 h-1 bg-white"></div>
+                        <div className="w-6 h-1 bg-white"></div>
+                        <div className="w-6 h-1 bg-white"></div>
+                      </div>
+                    </button>
+                  )}
+                </div>
+                <div className="relative" style={{ overflow: 'visible' }}>
+                  <div
+                    className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                      } transition-transform duration-300`}
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="space-y-1">
-                      <div className="w-6 h-1 bg-white"></div>
-                      <div className="w-6 h-1 bg-white"></div>
-                      <div className="w-6 h-1 bg-white"></div>
-                    </div>
-                  </button>
-                )}
-              </div>
-              <div className="relative" style={{ overflow: 'visible' }}>
-                <div
-                  className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                    } transition-transform duration-300`}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    onClick={handleMobileMenuToggle}
-                    className="absolute top-4 right-4 text-white z-50"
-                  >
-                    ✕
-                  </button>
-                  <ul className="mt-16 space-y-4 px-4 z-100">
-                    <li>
-                      <a
-                        href="#home"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-                        onClick={handleMenuClick}
-                      >
-                        <span role="img" aria-label="Home">🏠</span>
-                        <span>Home</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#about"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                        onClick={handleMenuClick}
-                      >
-                        About
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#projects"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                        onClick={handleMenuClick}
-                      >
-                        Projects
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#certifications"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                        onClick={handleMenuClick}
-                      >
-                        Certifications
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#connect"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                        onClick={handleMenuClick}
-                      >
-                        Connect
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#blogs"
-                        className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                        onClick={handleMenuClick}
-                      >
-                        Blogs
-                      </a>
-                    </li>
-                  </ul>
+                    <button
+                      onClick={handleMobileMenuToggle}
+                      className="absolute top-4 right-4 text-white z-50"
+                    >
+                      ✕
+                    </button>
+                    <ul className="mt-16 space-y-4 px-4 z-100">
+                      <li>
+                        <a
+                          href="#home"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+                          onClick={handleMenuClick}
+                        >
+                          <span role="img" aria-label="Home">🏠</span>
+                          <span>Home</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#about"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={handleMenuClick}
+                        >
+                          About
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#projects"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={handleMenuClick}
+                        >
+                          Projects
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#certifications"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={handleMenuClick}
+                        >
+                          Certifications
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#connect"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={handleMenuClick}
+                        >
+                          Connect
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#blogs"
+                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={handleMenuClick}
+                        >
+                          Blogs
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
+            </nav>
 
             {/* Donate Button */}
             <button
@@ -329,7 +331,7 @@ export default function App() {
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
 
 
-          
+
 
 
           <div className="z-10">
@@ -365,31 +367,48 @@ export default function App() {
 
 
 
-
-     
-
-
-
-
       <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative "
+        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-0"></div>
 
-
-        <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
+        {/* Two Small Balls */}
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4">
           <button
-            className="absolute right-4 top-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 z-50"
-            onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
-          >
-            Review CV
-          </button>
+            onClick={() => setCurrentAcademicIndex(0)}
+            className="w-8 h-8 bg-blue-500 rounded-full hover:bg-blue-700 transition duration-300"
+            title="Academic Competencies"
+          ></button>
+          <button
+            onClick={() => setCurrentProfessionalIndex(0)}
+            className="w-8 h-8 bg-green-500 rounded-full hover:bg-green-700 transition duration-300"
+            title="Professional Experience"
+          ></button>
+        </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-7xl">
-            {/* Professional Achievements */}
+        {/* Two Small Balls */}
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4 sm:hidden">
+          <button
+            onClick={() => setActiveContent('professional')}
+            className={`w-8 h-8 rounded-full transition duration-300 ${
+              activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'
+            }`}
+            title="Professional Experience"
+          ></button>
+          <button
+            onClick={() => setActiveContent('academic')}
+            className={`w-8 h-8 rounded-full transition duration-300 ${
+              activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-700'
+            }`}
+            title="Academic Competencies"
+          ></button>
+        </div>
+
+        {/* Content Display */}
+        <div className="z-20 flex flex-col justify-center items-center text-white h-full w-full px-4 sm:px-8">
+          {activeContent === 'professional' && (
             <div className="w-full sm:w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
               <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
@@ -400,17 +419,17 @@ export default function App() {
                 {professionalAchievements.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => {
-                      setAutoSlide(false);
-                      setCurrentProfessionalIndex(index);
-                    }}
-                    className={`w-3 h-3 rounded-full ${index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'}`}
+                    onClick={() => setCurrentProfessionalIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'
+                    }`}
                   ></button>
                 ))}
               </div>
             </div>
+          )}
 
-            {/* Academic Achievements */}
+          {activeContent === 'academic' && (
             <div className="w-full sm:w-1/2 text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
               <img
@@ -427,13 +446,14 @@ export default function App() {
                   <button
                     key={index}
                     onClick={() => setCurrentAcademicIndex(index)}
-                    className={`w-3 h-3 rounded-full ${index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
-                      }`}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
+                    }`}
                   ></button>
                 ))}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -609,7 +629,7 @@ export default function App() {
         Blogs
       </div>
 
-      
+
     </>
   );
 }
