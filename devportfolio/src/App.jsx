@@ -377,7 +377,7 @@ export default function App() {
         
       
         {/* Toggle Buttons for Mobile */}
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20 flex space-x-8 sm:hidden">
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-50 flex space-x-8 sm:hidden">
           <button
             onClick={() => setActiveContent('professional')}
             className={`flex flex-col items-center transition duration-300`}
