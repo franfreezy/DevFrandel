@@ -14,6 +14,32 @@ export default function App() {
   const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
   const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
+  const blogs = [
+    {
+      title: "Getting Started with Arduino",
+      date: "April 2025",
+      description: "Mastering the basics of Arduino programming",
+      image: "/assets/arduino.png",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["IoT", "Hardware", "Programming"]
+    },
+    {
+      title: "Space Technology in JKUAT",
+      date: "April 2025",
+      description: "The growing impact of space technology in JKUAT Engineering",
+      image: "/assets/jkuat.png",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["Space", "Technology", "Africa", "JKUAT"]
+    },
+    {
+      title: "Engineering in Kenya through my lens",
+      date: "April 2025",
+      description: "Essential concepts for aspiring hardware engineers",
+      image: "/assets/ece.jpg",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["Engineering", "Programming", "Electronics"]
+    }
+  ];
   const certifications = [
   {
     title: "Getting Started with Artificial Intelligence",
@@ -845,19 +871,74 @@ export default function App() {
       </div>
 
       <div
-        id="blogs"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center relative"
-        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+  id="blogs"
+  className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-16"
+  style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+>
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
-        {/* Content */}
-        <div className="z-20 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8">
-          <h1 className="text-center text-4xl font-bold">Blogs</h1>
-          {/* Add your content here */}
-        </div>
+  <div className="relative z-20 container mx-auto px-4">
+    
+    <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+      Sharing insights and experiences in technology and engineering
+    </p>
+
+    <div className="bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
+        {blogs.map((blog, index) => (
+          <a
+            key={index}
+            href={blog.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group"
+          >
+            <div className="relative h-48">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+            </div>
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-semibold text-white">{blog.title}</h3>
+                <p className="text-sm text-gray-400">{blog.date}</p>
+              </div>
+              <p className="text-gray-300 text-sm mb-4">{blog.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {blog.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
+    </div>
+
+    <div className="text-center mt-8">
+      <a
+        href="https://medium.com/@frandelwanjawa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
+      >
+        <span>View all posts on Medium</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
 
 
 
