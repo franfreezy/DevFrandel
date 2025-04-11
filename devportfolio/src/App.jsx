@@ -315,14 +315,14 @@ export default function App() {
 
   const handleMpesaClick = () => {
     try {
-      window.location.href = 'https://link.payd.one/REIhZC';
+      window.location.href = 'https://paystack.com/pay/frandelwanjawa';
     } catch (error) {
       alert(error.message);
     }
   };
   const handleDiasporaClick = () => {
     try {
-      window.location.href = 'https://web.mypayd.app/devfreezy';
+      window.location.href = 'https://paystack.com/pay/frandelwanjawa';
     } catch (error) {
       alert(error.message);
     }
