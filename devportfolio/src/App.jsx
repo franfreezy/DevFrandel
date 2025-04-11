@@ -14,6 +14,36 @@ export default function App() {
   const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
   const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
+  const certifications = [
+  {
+    title: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2024",
+    image: "/assets/aws.png",
+    link: "https://aws.amazon.com/certification/certified-cloud-practitioner/"
+  },
+  {
+    title: "Python Data Structures",
+    issuer: "University of Michigan",
+    date: "2023",
+    image: "/assets/python.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/ABCD1234"
+  },
+  {
+    title: "Machine Learning Fundamentals",
+    issuer: "Stanford Online",
+    date: "2023",
+    image: "/assets/ml.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/WXYZ5678"
+  },
+  {
+    title: "Web Development",
+    issuer: "freeCodeCamp",
+    date: "2022",
+    image: "/assets/web.png",
+    link: "https://www.freecodecamp.org/certification/fcc1234/responsive-web-design"
+  }
+];
   const projects = [
     {
       title: "Project Humanity",
@@ -653,19 +683,51 @@ export default function App() {
       </div>
 
       <div
-        id="certifications"
-        className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-8"
-        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
-      >
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+  id="certifications"
+  className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-16"
+  style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+>
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
-        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col">
-          <h1 className="text-4xl font-bold text-white text-center mb-8">Certifications</h1>
-          <div className="flex-1 bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm overflow-y-auto">
-            {/* Add your certifications content here */}
-          </div>
-        </div>
+  <div className="relative z-20 container mx-auto px-4">
+    <h1 className="text-4xl font-bold text-white text-center mb-8">Certifications</h1>
+    <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+      Continuous learning and professional development through recognized certifications
+    </p>
+    
+    <div className="bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-h-[60vh] overflow-y-auto">
+        {certifications.map((cert, index) => (
+          <a
+            key={index}
+            href={cert.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-900 bg-opacity-80 rounded-lg p-6 transform transition-all duration-300 hover:scale-105 hover:bg-opacity-90"
+          >
+            <div className="flex items-center justify-center mb-4">
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="w-16 h-16 object-contain rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">{cert.title}</h3>
+              <p className="text-blue-400 text-sm mb-1">{cert.issuer}</p>
+              <p className="text-gray-400 text-sm">{cert.date}</p>
+            </div>
+          </a>
+        ))}
       </div>
+    </div>
+
+    <div className="text-center mt-8">
+      <p className="text-gray-400 text-sm">Click on any certification to verify</p>
+    </div>
+  </div>
+</div>
 
       <div
         id="connect"
@@ -677,93 +739,70 @@ export default function App() {
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col">
           <h2 className="text-4xl font-bold text-white text-center mb-8">Let's Connect</h2>
           
-          <div className="flex-1 max-w-6xl mx-auto w-full bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
-            <div className="grid md:grid-cols-2 gap-8 h-full">
-              {/* Contact Form */}
-              <div className="space-y-6 z-50">
-                <h3 className="text-2xl font-semibold text-white mb-4">Send me a message</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <textarea
-                      placeholder="Your Message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows="8"
-                      className="w-full px-4 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300"
-                  >
-                    Send Message
-                  </button>
-                </form>
+          <div className="flex-1 max-w-4xl mx-auto w-full bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+            <div className="space-y-8">
+              <div className="text-center mb-8">
+                <a
+                  href="https://wa.me/+254729634366"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300"
+                >
+                  <img src="/assets/whatsapp.png" alt="WhatsApp" className="h-6 w-6" />
+                  <span>Chat on WhatsApp</span>
+                </a>
               </div>
 
-              {/* Social Links and Info */}
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-white mb-6">Connect with me</h3>
+              <div className="grid sm:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <a
-                    href="https://github.com/franfreezy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
-                  >
-                    <img src="/assets/github.png" alt="GitHub" className="h-8 w-8 rounded-full" />
-                    <span>Follow on GitHub</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/frandel-wanjawa/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
-                  >
-                    <img src="/assets/linkedin.png" alt="LinkedIn" className="h-8 w-8 rounded-full" />
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                  <a
-                    href="https://twitter.com/codewithfreezy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
-                  >
-                    <img src="/assets/twitter.png" alt="Twitter" className="h-8 w-8 rounded-full" />
-                    <span>Follow on Twitter</span>
-                  </a>
+                  <h3 className="text-2xl font-semibold text-white mb-6">Social Links</h3>
+                  <div className="space-y-4">
+                    <a
+                      href="https://github.com/franfreezy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/github.png" alt="GitHub" className="h-8 w-8 rounded-full" />
+                      <span>Follow on GitHub</span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/frandel-wanjawa/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/linkedin.png" alt="LinkedIn" className="h-8 w-8 rounded-full" />
+                      <span>Connect on LinkedIn</span>
+                    </a>
+                    <a
+                      href="https://twitter.com/codewithfreezy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/twitter.png" alt="Twitter" className="h-8 w-8 rounded-full" />
+                      <span>Follow on Twitter</span>
+                    </a>
+                  </div>
                 </div>
 
-                <div className="mt-12 text-gray-300 space-y-3">
-                  <p className="flex items-center gap-2">
-                    <span className="text-xl">📧</span>
-                    <span>frandelwanjawa19@gmail.com</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <span className="text-xl">📱</span>
-                    <span>+254 729 634 366</span>
-                  </p>
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-semibold text-white mb-6">Contact Info</h3>
+                  <div className="space-y-4">
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📧</span>
+                      <span>frandelwanjawa19@gmail.com</span>
+                    </p>
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📱</span>
+                      <span>+254 729 634 366</span>
+                    </p>
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📍</span>
+                      <span>Nairobi, Kenya</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
