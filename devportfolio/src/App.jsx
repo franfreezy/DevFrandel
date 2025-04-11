@@ -16,32 +16,49 @@ export default function App() {
   const [autoSlide, setAutoSlide] = useState(true);
   const certifications = [
   {
-    title: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
+    title: "Getting Started with Artificial Intelligence",
+    issuer: "IBM Skillbuild",
+    date: "2025",
+    image: "/assets/cert1.png",
+    link: "https://www.credly.com/badges/2c81c20f-7df7-44b1-8167-5b8c122ad1f8/public_url"
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco",
     date: "2024",
-    image: "/assets/aws.png",
-    link: "https://aws.amazon.com/certification/certified-cloud-practitioner/"
+    image: "/assets/cert2.png",
+    link: "https://www.credly.com/badges/0e61d18e-3505-45d8-ae62-1a6ef7f8dc6a/public_url"
   },
   {
-    title: "Python Data Structures",
-    issuer: "University of Michigan",
+    title: "Robotics Dojo",
+    issuer: "JKUAT-JICA",
     date: "2023",
-    image: "/assets/python.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/ABCD1234"
+    image: "/assets/cert3.png",
+    link: "https://roboticsdojo.github.io/member.html"
   },
   {
-    title: "Machine Learning Fundamentals",
-    issuer: "Stanford Online",
-    date: "2023",
-    image: "/assets/ml.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/WXYZ5678"
+    title: "Cubesat Development",
+    issuer: "Italian Space Agency",
+    date: "2024",
+    image: "/assets/cert4.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
   },
   {
-    title: "Web Development",
-    issuer: "freeCodeCamp",
-    date: "2022",
-    image: "/assets/web.png",
-    link: "https://www.freecodecamp.org/certification/fcc1234/responsive-web-design"
+    title: "Build Your First Chatbot",
+    issuer: "IBM",
+    date: "2025",
+    image: "/assets/cert5.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
+  },
+  {
+    title: "Fing IT professional",
+    issuer: "Fing",
+    date: "2024",
+    image: "/assets/cert6.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
   }
 ];
   const projects = [
@@ -332,62 +349,79 @@ export default function App() {
                       ✕
                     </button>
                     <ul className="mt-16 space-y-4 px-4 z-100">
-                      <li>
-                        <a
-                          href="#home"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-                          onClick={handleMenuClick}
-                        >
-                          <span role="img" aria-label="Home">🏠</span>
-                          <span>Home</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#about"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                          onClick={handleMenuClick}
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#projects"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                          onClick={handleMenuClick}
-                        >
-                          Projects
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#certifications"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                          onClick={handleMenuClick}
-                        >
-                          Certifications
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#connect"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                          onClick={handleMenuClick}
-                        >
-                          Connect
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#blogs"
-                          className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                          onClick={handleMenuClick}
-                        >
-                          Blogs
-                        </a>
-                      </li>
-                    </ul>
+  <li>
+    <a
+      href="#home"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Home">🏠</span>
+      <span>Home</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#about"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="About">👤</span>
+      <span>About</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#projects"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Projects">💻</span>
+      <span>Projects</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#certifications"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Certifications">🎓</span>
+      <span>Certifications</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#connect"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Connect">🤝</span>
+      <span>Connect</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#blogs"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Blogs">📝</span>
+      <span>Blogs</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="/assets/Frandel.pdf"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="CV">📄</span>
+      <span>Review CV</span>
+    </a>
+  </li>
+</ul>
                   </div>
                 </div>
               </div>
@@ -690,7 +724,7 @@ export default function App() {
   <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
   <div className="relative z-20 container mx-auto px-4">
-    <h1 className="text-4xl font-bold text-white text-center mb-8">Certifications</h1>
+    
     <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
       Continuous learning and professional development through recognized certifications
     </p>
