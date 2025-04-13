@@ -109,6 +109,14 @@ export default function App() {
       link: "https://www.linkedin.com/company/tafiti-cubesat/",
       technologies: ["Space Tech", "Engineering", "Research"]
     },
+    
+    {
+      title: "Payroll Management System",
+      description: "Savannah Agile payroll system",
+      image: "/assets/lsa.png",
+      link: "http://www.smartbaby.ct.ws/",
+      technologies: ["software", "problem solving", "Research"]
+    },
     {
       title: "Smart Baby Crib",
       description: "IoT-enabled baby crib with monitoring sensors",
