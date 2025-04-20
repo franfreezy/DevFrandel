@@ -56,6 +56,13 @@ export default function App() {
     link: "https://www.credly.com/badges/0e61d18e-3505-45d8-ae62-1a6ef7f8dc6a/public_url"
   },
   {
+    title: "Microsoft AI Fluency Course",
+    issuer: "Microsoft",
+    date: "2025",
+    image: "/assets/cert7.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
     title: "Robotics Dojo",
     issuer: "JKUAT-JICA",
     date: "2023",
