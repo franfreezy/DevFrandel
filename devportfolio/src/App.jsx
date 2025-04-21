@@ -63,6 +63,20 @@ export default function App() {
     link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
   },
   {
+    title: "TT&C subsystem Trainer",
+    issuer: "[WIE MMU] - KSA",
+    date: "2025",
+    image: "/assets/cert8.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
+    title: "AWS Skill builder learner guide",
+    issuer: "AWS",
+    date: "2025",
+    image: "/assets/cert9.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
     title: "Robotics Dojo",
     issuer: "JKUAT-JICA",
     date: "2023",
@@ -169,7 +183,7 @@ export default function App() {
   ];
   const professionalAchievements = [
     {
-      title: "CEO and Founder Tethics Electrics Grp.",
+      title: "CEO and Co-Founder Tethics Electrics Grp.",
       year: "2025 April - Current",
       description: "Leading a team of developers to build cutting-edge solutions that address real-world challenges.",
     },
