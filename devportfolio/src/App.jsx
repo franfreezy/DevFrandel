@@ -42,11 +42,18 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Getting Started with DevOps on AWS",
+      issuer: "AWS",
+      date: "2025",
+      image: "/assets/cert11.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
       title: "Cloud for CTOs",
       issuer: "AWS",
       date: "2025",
       image: "/assets/cert10.png",
-      link: "https://www.credly.com/badges/2c81c20f-7df7-44b1-8167-5b8c122ad1f8/public_url"
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
     },
   {
     title: "Getting Started with Artificial Intelligence",
