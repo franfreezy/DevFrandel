@@ -41,6 +41,13 @@ export default function App() {
     }
   ];
   const certifications = [
+    {
+      title: "Cloud for CTOs",
+      issuer: "AWS",
+      date: "2025",
+      image: "/assets/cert10.png",
+      link: "https://www.credly.com/badges/2c81c20f-7df7-44b1-8167-5b8c122ad1f8/public_url"
+    },
   {
     title: "Getting Started with Artificial Intelligence",
     issuer: "IBM Skillbuild",
