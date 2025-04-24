@@ -207,7 +207,7 @@ export default function App() {
       description: "Led the communication and Ground Station Subsystem  .",
     },
     {
-      title: "Engineering Intern - Egypro EAst Africa Ltd.",
+      title: "Engineering Intern - Egypro East Africa Ltd.",
       year: "2023 Jan- 2023 May",
       description: "Maintained Safaricom Boosters.",
     },
