@@ -124,6 +124,13 @@ export default function App() {
 ];
   const projects = [
     {
+      title: "Health Information Management System",
+      description: "Web-based health information management system",
+      image: "/assets/normalLogin.png",
+      link: "https://github.com/K-HIF/MedicApp",
+      technologies: ["Django", "React", "Vite"]
+    },
+    {
       title: "Project Humanity",
       description: "Data analysis on UN datasets for humanitarian insights",
       image: "/assets/undata.png",
