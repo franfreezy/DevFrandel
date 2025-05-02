@@ -42,6 +42,13 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Complex Negotiation Tips",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/negotiation.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
       title: "Getting Started with DevOps on AWS",
       issuer: "AWS",
       date: "2025",
@@ -200,6 +207,14 @@ export default function App() {
       image: "/assets/dsa.png",
       link: "https://github.com/franfreezy/DSA2.0",
       technologies: ["DSA", "Python", "Algorithms"]
+    }
+    ,
+    {
+      title: "Tethics Electrics Group",
+      description: "Fastest growing AI start-up",
+      image: "/assets/logo.png",
+      link: "https://tethicselectrics.onrender.com/",
+      technologies: ["AI", "Embedded Systems", "Engineering"]
     }
   ];
   const professionalAchievements = [
