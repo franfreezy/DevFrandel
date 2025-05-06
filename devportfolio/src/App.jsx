@@ -42,6 +42,13 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Project Management Foundations",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert12.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
       title: "Complex Negotiation Tips",
       issuer: "LinkedIn Learning",
       date: "2025",
