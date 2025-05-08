@@ -42,6 +42,41 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Career Essentials in Github Professional Certificate",
+      issuer: "GitHub",
+      date: "2025",
+      image: "/assets/cert13.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub actions",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert14.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub Code Search",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert15.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub Copilot",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert16.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub P.M & collaboration",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert17.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
       title: "Project Management Foundations",
       issuer: "LinkedIn Learning",
       date: "2025",
