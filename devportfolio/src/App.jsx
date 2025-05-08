@@ -138,6 +138,13 @@ export default function App() {
 ];
   const projects = [
     {
+      title: "Feed Generator For Podcasts ",
+      description: "a feed generator for podcasts available on github marketplace", 
+      image: "/assets/gitlogo.jpeg",
+      link: "https://github.com/marketplace/actions/feed-generator-for-podcasts",
+      technologies: ["python", "Docker", "Github actions"]
+    },
+    {
       title: "Health Information Management System",
       description: "Web-based health information management system",
       image: "/assets/normalLogin.png",
