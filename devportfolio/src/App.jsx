@@ -42,10 +42,45 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Cybersecurity Awareness: Ransomware",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert18.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },{
+      title: "Delivering an authentic Elevator Pitch",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert19.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Learn Emotional Intelligence",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert20.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Learn to be Approachable",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert21.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Unconcious Bias",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert22.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+
+    {
       title: "Career Essentials in Github Professional Certificate",
       issuer: "GitHub",
       date: "2025",
-      image: "/assets/cert13.png",
+      image: "/assets/Cert13.png",
       link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
     },
     {
@@ -175,7 +210,7 @@ export default function App() {
     {
       title: "Feed Generator For Podcasts ",
       description: "a feed generator for podcasts available on github marketplace", 
-      image: "/assets/gitlogo.jpeg",
+      image: "/assets/podcast.jpeg",
       link: "https://github.com/marketplace/actions/feed-generator-for-podcasts",
       technologies: ["python", "Docker", "Github actions"]
     },
