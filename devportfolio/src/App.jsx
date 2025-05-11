@@ -42,12 +42,41 @@ export default function App() {
   ];
   const certifications = [
     {
+      title: "Persuading Others",
+      issuer: "LinkedIn & PMI",
+      date: "2025",
+      image: "/assets/cert26.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Holding Yourself Accountable",
+      issuer: "LinkedIn & PMI",
+      date: "2025",
+      image: "/assets/cert25.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "ETL in python and SQL",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert24.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Communicating Values",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert23.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
       title: "Cybersecurity Awareness: Ransomware",
       issuer: "LinkedIn Learning",
       date: "2025",
       image: "/assets/cert18.png",
       link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
-    },{
+    },
+    {
       title: "Delivering an authentic Elevator Pitch",
       issuer: "LinkedIn Learning",
       date: "2025",
