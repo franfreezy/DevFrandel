@@ -7,16 +7,332 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const texts = ['Frandel Wanjawa.', 'a Hardware Engineer.', 'a Data Engineer.', 'a Space Enthusiast.', 'a Problem Solver.'];
+  const texts = ['Frandel Wanjawa.', 'a Software Engineer.', 'a Hardware Engineer.', 'a Data Engineer.', 'an SDG champion .'];
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState('down');
   const sections = ['home', 'about', 'projects', 'certifications', 'connect', 'blogs'];
   const [currentProfessionalIndex, setCurrentProfessionalIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
+  const blogs = [
+    {
+      title: "Getting Started with Arduino",
+      date: "April 2025",
+      description: "Mastering the basics of Arduino programming",
+      image: "/assets/arduino.png",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["IoT", "Hardware", "Programming"]
+    },
+    {
+      title: "Space Technology in JKUAT",
+      date: "April 2025",
+      description: "The growing impact of space technology in JKUAT Engineering",
+      image: "/assets/jkuat.png",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["Space", "Technology", "Africa", "JKUAT"]
+    },
+    {
+      title: "Engineering in Kenya through my lens",
+      date: "April 2025",
+      description: "Essential concepts for aspiring hardware engineers",
+      image: "/assets/ece.jpg",
+      link: "https://medium.com/@frandelwanjawa",
+      tags: ["Engineering", "Programming", "Electronics"]
+    }
+  ];
+  const certifications = [
+    {
+      title: "Persuading Others",
+      issuer: "LinkedIn & PMI",
+      date: "2025",
+      image: "/assets/cert26.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Holding Yourself Accountable",
+      issuer: "LinkedIn & PMI",
+      date: "2025",
+      image: "/assets/cert25.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "ETL in python and SQL",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert24.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Communicating Values",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert23.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Cybersecurity Awareness: Ransomware",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert18.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Delivering an authentic Elevator Pitch",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert19.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Learn Emotional Intelligence",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert20.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Learn to be Approachable",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert21.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Unconcious Bias",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert22.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+
+    {
+      title: "Career Essentials in Github Professional Certificate",
+      issuer: "GitHub",
+      date: "2025",
+      image: "/assets/Cert13.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub actions",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert14.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub Code Search",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert15.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub Copilot",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert16.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Practical GitHub P.M & collaboration",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert17.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Project Management Foundations",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/cert12.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Complex Negotiation Tips",
+      issuer: "LinkedIn Learning",
+      date: "2025",
+      image: "/assets/negotiation.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Getting Started with DevOps on AWS",
+      issuer: "AWS",
+      date: "2025",
+      image: "/assets/cert11.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+    {
+      title: "Cloud for CTOs",
+      issuer: "AWS",
+      date: "2025",
+      image: "/assets/cert10.png",
+      link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    },
+  {
+    title: "Getting Started with Artificial Intelligence",
+    issuer: "IBM Skillbuild",
+    date: "2025",
+    image: "/assets/cert1.png",
+    link: "https://www.credly.com/badges/2c81c20f-7df7-44b1-8167-5b8c122ad1f8/public_url"
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco",
+    date: "2024",
+    image: "/assets/cert2.png",
+    link: "https://www.credly.com/badges/0e61d18e-3505-45d8-ae62-1a6ef7f8dc6a/public_url"
+  },
+  {
+    title: "Microsoft AI Fluency Course",
+    issuer: "Microsoft",
+    date: "2025",
+    image: "/assets/cert7.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
+    title: "TT&C subsystem Trainer",
+    issuer: "[WIE MMU] - KSA",
+    date: "2025",
+    image: "/assets/cert8.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
+    title: "AWS Skill builder learner guide",
+    issuer: "AWS",
+    date: "2025",
+    image: "/assets/cert9.png",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+  },
+  {
+    title: "Robotics Dojo",
+    issuer: "JKUAT-JICA",
+    date: "2023",
+    image: "/assets/cert3.png",
+    link: "https://roboticsdojo.github.io/member.html"
+  },
+  {
+    title: "Cubesat Development",
+    issuer: "Italian Space Agency",
+    date: "2024",
+    image: "/assets/cert4.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
+  },
+  {
+    title: "Build Your First Chatbot",
+    issuer: "IBM",
+    date: "2025",
+    image: "/assets/cert5.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
+  },
+  {
+    title: "Fing IT professional",
+    issuer: "Fing",
+    date: "2024",
+    image: "/assets/cert6.jpg",
+    link: "https://www.linkedin.com/in/frandel-wanjawa/details/certifications/"
+    
+  }
+];
+  const projects = [
+    {
+      title: "Feed Generator For Podcasts ",
+      description: "a feed generator for podcasts available on github marketplace", 
+      image: "/assets/podcast.jpeg",
+      link: "https://github.com/marketplace/actions/feed-generator-for-podcasts",
+      technologies: ["python", "Docker", "Github actions"]
+    },
+    {
+      title: "Health Information Management System",
+      description: "Web-based health information management system",
+      image: "/assets/normalLogin.png",
+      link: "https://github.com/K-HIF/MedicApp",
+      technologies: ["Django", "React", "Vite"]
+    },
+    {
+      title: "Project Humanity",
+      description: "Data analysis on UN datasets for humanitarian insights",
+      image: "/assets/undata.png",
+      link: "https://github.com/franfreezy/dataScience",
+      technologies: ["Python", "Pandas", "Data Analysis"]
+    },
+    {
+      title: "AgriX Cubesat",
+      description: "JKUAT Satellite project for agricultural monitoring",
+      image: "/assets/agrisat.png",
+      link: "https://agroxsatsite.onrender.com",
+      technologies: ["Hardware", "Space Tech", "IoT"]
+    },
+    {
+      title: "Tafiti Cubesat",
+      description: "TAFITI satellite project for space research",
+      image: "/assets/tafiti.jpeg",
+      link: "https://www.linkedin.com/company/tafiti-cubesat/",
+      technologies: ["Space Tech", "Engineering", "Research"]
+    },
+    
+    {
+      title: "Payroll Management System",
+      description: "Savannah Agile payroll system",
+      image: "/assets/lsa.png",
+      link: "http://www.smartbaby.ct.ws/",
+      technologies: ["software", "problem solving", "Research"]
+    },
+    {
+      title: "Smart Baby Crib",
+      description: "IoT-enabled baby crib with monitoring sensors",
+      image: "/assets/babycrib.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["IoT", "Arduino", "Sensors"]
+    },
+    {
+      title: "Home Automation",
+      description: "Web-controlled home automation system",
+      image: "/assets/homeauto.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["IoT", "Web Control", "Automation"]
+    },
+    {
+      title: "Robotics Project",
+      description: "Autonomous robot with obstacle avoidance",
+      image: "/assets/robot.jpeg",
+      link: "https://github.com/franfreezy",
+      technologies: ["Robotics", "Arduino", "Sensors"]
+    },
+    {
+      title: "Aviator Bot",
+      description: "Data mining bot for aviator platform",
+      image: "/assets/aviator.jpeg",
+      link: "https://github.com/franfreezy/AviatorBot",
+      technologies: ["Python", "Data Mining", "Automation"]
+    },
+    {
+      title: "Data Platform",
+      description: "Full-stack financial data platform",
+      image: "/assets/reactdjango.png",
+      link: "https://github.com/franfreezy/FinancialAndMacroeconomicPlatform",
+      technologies: ["React", "Django", "Full Stack"]
+    },
+    {
+      title: "DSA Projects",
+      description: "Data structures and algorithms implementations",
+      image: "/assets/dsa.png",
+      link: "https://github.com/franfreezy/DSA2.0",
+      technologies: ["DSA", "Python", "Algorithms"]
+    }
+    ,
+    {
+      title: "Tethics Electrics Group",
+      description: "Fastest growing AI start-up",
+      image: "/assets/logo.png",
+      link: "https://tethicselectrics.onrender.com/",
+      technologies: ["AI", "Embedded Systems", "Engineering"]
+    }
+  ];
   const professionalAchievements = [
     {
-      title: "CEO and Founder FastWare Inc.",
+      title: "CEO and Co-Founder Tethics Electrics Grp.",
       year: "2025 April - Current",
       description: "Leading a team of developers to build cutting-edge solutions that address real-world challenges.",
     },
@@ -26,7 +342,7 @@ export default function App() {
       description: "Led the communication and Ground Station Subsystem  .",
     },
     {
-      title: "Engineering Intern - Egypro EAst Africa Ltd.",
+      title: "Engineering Intern - Egypro East Africa Ltd.",
       year: "2023 Jan- 2023 May",
       description: "Maintained Safaricom Boosters.",
     },
@@ -40,7 +356,7 @@ export default function App() {
       year: "2019 July - 2019 August ",
       description: "Collected and relayed data for the 2019 Kenya Census.",
     },
-    
+
   ];
   const [currentAcademicIndex, setCurrentAcademicIndex] = useState(0);
   const academicQualifications = [
@@ -67,6 +383,13 @@ export default function App() {
     },
   ];
   const [isAdmin, setIsAdmin] = useState(false);
+
+  const [activeContent, setActiveContent] = useState('professional');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -176,327 +499,645 @@ export default function App() {
 
   const handleMpesaClick = () => {
     try {
-      window.location.href = 'https://link.payd.one/REIhZC';
+      window.location.href = 'https://paystack.com/pay/frandelwanjawa';
     } catch (error) {
       alert(error.message);
     }
   };
   const handleDiasporaClick = () => {
     try {
-      window.location.href = 'https://web.mypayd.app/devfreezy';
+      window.location.href = 'https://paystack.com/pay/frandelwanjawa';
     } catch (error) {
       alert(error.message);
     }
   };
 
+<<<<<<< HEAD
   const MainContent = () => (
+=======
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const message = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`);
+    window.location.href = `https://wa.me/+254729634366?text=${message}`;
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  return (
+>>>>>>> 8c65aa16e684dd94c408766b22e3c365f0d0adc2
     <>
       <div id="home" className="min-h-screen">
         {isLoading && (
           <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-blue-900 to-black z-50">
-            <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-24 h-24 border-8 border-blue-500 border-t-transparent rounded-full animate-spin z-100"></div>
           </div>
         )}
+        {!isLoading && (
+          <>
+            {/* Navigation Bar */}
+            <nav className="bg-transparent-900 w-full p-3 fixed top-0 z-50">
+              <div className="container  flex   items-center">
+                <div className="flex  items-center w-full">
+                  {!isMobileMenuOpen && (
+                    <button
+                      onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                      className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                    >
+                      <div className="space-y-1">
+                        <div className="w-6 h-1 bg-white"></div>
+                        <div className="w-6 h-1 bg-white"></div>
+                        <div className="w-6 h-1 bg-white"></div>
+                      </div>
+                    </button>
+                  )}
+                </div>
+                <div className="relative" style={{ overflow: 'visible' }}>
+                  <div
+                    className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-90 text-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                      } transition-transform duration-300`}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={handleMobileMenuToggle}
+                      className="absolute top-4 right-4 text-white z-50"
+                    >
+                      ✕
+                    </button>
+                    <ul className="mt-16 space-y-4 px-4 z-100">
+  <li>
+    <a
+      href="#home"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Home">🏠</span>
+      <span>Home</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#about"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="About">👤</span>
+      <span>About</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#projects"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Projects">💻</span>
+      <span>Projects</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#certifications"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Certifications">🎓</span>
+      <span>Certifications</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#connect"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Connect">🤝</span>
+      <span>Connect</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#blogs"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="Blogs">📝</span>
+      <span>Blogs</span>
+    </a>
+  </li>
+  <li>
+    <a
+      href="/assets/Frandel.pdf"
+      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleMenuClick}
+    >
+      <span role="img" aria-label="CV">📄</span>
+      <span>Review CV</span>
+    </a>
+  </li>
+</ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+            {/* Donate Button */}
+            <button
+              onClick={handleDropdownToggle}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
+            >
+              Donate
+            </button>
+
+            {/* Scroll Button */}
+            <div
+              className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50"
+              style={{
+                background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
+              }}
+            >
+              <button
+                onClick={() => {
+                  if (currentSection === sections.length - 1) {
+                    setDirection('up');
+                    navigateToSection(-1);
+                  } else if (currentSection === 0) {
+                    setDirection('down');
+                    navigateToSection(1);
+                  } else {
+                    const nextDirection = direction === 'down' ? 1 : -1;
+                    setDirection(nextDirection === 1 ? 'down' : 'up');
+                    navigateToSection(nextDirection);
+                  }
+                }}
+                className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300 z-50"
+              >
+                {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
+              </button>
+            </div>
+          </>
+        )}
         <div
-          className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center"
+          className="h-screen w-full bg-cover bg-center flex flex-col items-center justify-center relative"
           style={{ backgroundImage: "url('/assets/img3.jpg')" }}
           onLoad={handleImageLoad}
         >
-          <nav className="bg-transparent-900 w-full p-3 fixed top-0">
-            <div className="container mx-auto flex justify-between items-center">
-              <div className="flex items-center space-x-2">
-                {!isMobileMenuOpen && (
-                  <button
-                    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                    className="text-white px-2 sm:px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-                  >
-                    <div className="space-y-1">
-                      <div className="w-6 h-1 bg-white"></div>
-                      <div className="w-6 h-1 bg-white"></div>
-                      <div className="w-6 h-1 bg-white"></div>
-                    </div>
-                  </button>
-                )}
-              </div>
-              <div
-                className={`fixed top-0 left-0 h-full bg-transparent-900 text-white z-50 transform ${
-                  isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                } transition-transform duration-300`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={handleMobileMenuToggle}
-                  className="absolute top-4 right-4 text-white"
-                >
-                  ✕
-                </button>
-                <ul className="mt-16 space-y-4 px-4">
-                  <li>
-                    <a
-                      href="#home"
-                      className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-                      onClick={(event) => {
-                        handleMenuClick();
-                      }}
-                    >
-                      <span role="img" aria-label="Home">🏠</span>
-                      <span>Home</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#projects" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#certifications" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Certifications
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#connect" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Connect
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#blogs" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-                      Blogs
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
 
-          <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
-          <br />
-          <h1 className="text-center text-white text-2xl sm:text-4xl mt-4 sm:mt-0">I am {displayedText}</h1>
-        </div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
 
-        <button
-          onClick={handleDropdownToggle}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
-        >
-          Donate
-        </button>
 
-        {isDropdownOpen && (
-          <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg">
-            <ul>
-              <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
-                M-Pesa
-              </li>
-              <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
-                Diaspora
-              </li>
-            </ul>
+
+
+
+          <div className="z-10">
+            <img src="/assets/CTO.jpg" alt="Logo" className="h-40 w-40 sm:h-80 sm:w-80 object-cover rounded-full" />
           </div>
-        )}
+
+
+          <div className="z-10 mt-4 sm:mt-10">
+            <h1 className="text-center text-white text-2xl sm:text-4xl animate-bounce">I am {displayedText}</h1>
+          </div>
+
+          <button
+            onClick={handleDropdownToggle}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 fixed bottom-4 left-4"
+          >
+            Donate
+          </button>
+
+          {isDropdownOpen && (
+            <div className="fixed bottom-16 left-4 bg-white text-black rounded shadow-lg z-50">
+              <ul>
+                <li className="p-2 hover:bg-green-700 cursor-pointer" onClick={handleMpesaClick}>
+                  M-Pesa
+                </li>
+                <li className="p-2 hover:bg-yellow-400 cursor-pointer" onClick={handleDiasporaClick}>
+                  Diaspora
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
+
+
       <div
         id="about"
-        className="h-screen w-full bg-cover bg-center flex flex-col justify-center px-2"
+        className="min-h-screen w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
+<<<<<<< HEAD
         <div className=" p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
+=======
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+
+
+        {/* Toggle Buttons for Mobile */}
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-50 flex space-x-8 sm:hidden">
+>>>>>>> 8c65aa16e684dd94c408766b22e3c365f0d0adc2
           <button
-            className="absolute right-0 top-[-10px] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
-            onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
+            onClick={() => setActiveContent('professional')}
+            className={`flex flex-col items-center transition duration-300`}
           >
-            Review CV
+            <div className={`w-10 h-10 rounded-full ${activeContent === 'professional' ? 'bg-blue-700' : 'bg-blue-500'
+              } mb-2`}></div>
+            <span className={`text-sm text-white ${activeContent === 'professional' ? 'font-bold' : ''
+              }`}>Professional</span>
           </button>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-12">
-            {/* Professional Achievements */}
-            <div className="w-full sm:w-1/2 text-center">
-              <h3 className="text-lg sm:text-xl font-bold mb-4">Professional Experience</h3>
-              <img src="/assets/engineer.png" alt="Engineer" className="w-28 h-28 mx-auto mb-4 object-contain" />
-              <h4 className="text-lg font-semibold mt-2">{professionalAchievements[currentProfessionalIndex].title}</h4>
-              <p className="text-gray-300">{professionalAchievements[currentProfessionalIndex].year}</p>
-              <p className="text-gray-200 mt-2">{professionalAchievements[currentProfessionalIndex].description}</p>
-              <div className="flex justify-center mt-4 space-x-2">
-                {professionalAchievements.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setAutoSlide(false);
-                      setCurrentProfessionalIndex(index);
-                    }}
-                    className={`w-3 h-3 rounded-full ${index === currentProfessionalIndex ? 'bg-blue-500' : 'bg-gray-500'}`}
-                  ></button>
-                ))}
-              </div>
-            </div>
+          <button
+            onClick={() => setActiveContent('academic')}
+            className={`flex flex-col items-center transition duration-300`}
+          >
+            <div className={`w-10 h-10 rounded-full ${activeContent === 'academic' ? 'bg-green-700' : 'bg-green-500'
+              } mb-2`}></div>
+            <span className={`text-sm text-white ${activeContent === 'academic' ? 'font-bold' : ''
+              }`}>Academic</span>
+          </button>
+        </div>
 
-            {/* Academic Achievements */}
-            <div className="w-full sm:w-1/2 text-center">
-              <h3 className="text-lg sm:text-xl font-bold mb-4">Academic Competencies</h3>
-              <img
-                src={academicQualifications[currentAcademicIndex].image}
-                alt="Academic Qualification"
-                className="w-20 h-20 mx-auto mb-2 object-contain"
-              />
-              <h4 className="text-md font-semibold mt-2">{academicQualifications[currentAcademicIndex].title}</h4>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].institution}</p>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].achievement}</p>
-              <p className="text-sm text-gray-300">{academicQualifications[currentAcademicIndex].year}</p>
-              <div className="flex justify-center mt-4 space-x-2">
-                {academicQualifications.map((_, index) => (
-                  <button
+        {/* Content Container */}
+        <div className="relative z-20 pt-32 sm:pt-0 sm:flex">
+          {/* Professional Experience */}
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${activeContent === 'professional' ? 'block' : 'hidden sm:block'
+            }`}>
+            <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
+              <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
+                Professional Experience
+              </h2>
+              <div className="space-y-4">
+                {professionalAchievements.map((achievement, index) => (
+                  <div
                     key={index}
-                    onClick={() => setCurrentAcademicIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentAcademicIndex ? 'bg-blue-500' : 'bg-gray-500'
-                    }`}
-                  ></button>
+                    className="bg-gray-900 bg-opacity-50 p-4 rounded-lg transform transition-all duration-300 hover:scale-102 hover:bg-opacity-70"
+                  >
+                    <h3 className="text-lg font-semibold text-blue-400">{achievement.title}</h3>
+                    <p className="text-gray-400 text-sm mt-1">{achievement.year}</p>
+                    <p className="text-white text-sm mt-2">{achievement.description}</p>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div id="projects" className="h-3/4 w-full bg-cover bg-center flex items-center justify-center flex-col p-4" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <div className="block sm:hidden w-full ">
-          <ul className="space-y-2 mt-16">
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/dataScience" target="_blank" className="no-underline">Project Humanity</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://agroxsatsite.onrender.com" target="_blank" className="no-underline">AgriX cubesat</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="no-underline">DSA</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Smart baby crib</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Home automation</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy" target="_blank" className="no-underline">Robotics</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="no-underline">Aviator bot</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="no-underline">Django React</a>
-            </li>
-            <li className="bg-white text-black p-4 rounded-lg shadow-lg h-12">
-              <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="no-underline">Tafiti cubesat</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-16 ">
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/undata.png" alt="UN data" className="w-full h-12 object-cover rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Project Humanity</h2>
-            <p className="mt-2 text-sm text-gray-600">Data analysis on Data from UN</p>
-            <a href="https://github.com/franfreezy/dataScience" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/agrisat.png" alt="AgriX sat" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">AgriX SAT</h2>
-            <p className="mt-2 text-sm text-gray-600">JKUAT Satellite project </p>
-            <a href="https://agroxsatsite.onrender.com" target="_blank" className="mt-4 text-black-500 no-underline">Visit website</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/tafiti.jpeg" alt="Tafiti" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Tafiti cubesat</h2>
-            <p className="mt-2 text-sm text-gray-600">TAFITI satellite project</p>
-            <a href="https://www.linkedin.com/company/tafiti-cubesat/" target="_blank" className="mt-4 text-black-500 no-underline">View on LinkedIn</a>
-          </div>
-
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/babycrib.jpeg" alt="babycrib" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Smart baby crib</h2>
-            <p className="mt-2 text-sm text-gray-600">Baby crib with sensors to monitor the baby </p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/homeauto.jpeg" alt="HomeAuto" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Home automation</h2>
-            <p className="mt-2 text-sm text-gray-600">Controlling switches and lamps via the web</p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/robot.jpeg" alt="Robotics" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Robotics</h2>
-            <p className="mt-2 text-sm text-gray-600">Obstacle avoidance and line following</p>
-            <a href="https://github.com/franfreezy" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/aviator.jpeg" alt="Aviator" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Aviator bot</h2>
-            <p className="mt-2 text-sm text-gray-600">Bot to mine data in aviator</p>
-            <a href="https://github.com/franfreezy/AviatorBot" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/reactdjango.png" alt="Data platform" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">Django React</h2>
-            <p className="mt-2 text-sm text-gray-600">Backend-Frontend Data platform</p>
-            <a href="https://github.com/franfreezy/FinancialAndMacroeconomicPlatform" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
-          </div>
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center h-48">
-            <img src="/assets/dsa.png" alt="DSA" className="w-full h-12 object-contain rounded-lg" />
-            <h2 className="mt-4 text-lg font-semibold">DSA</h2>
-            <p className="mt-2 text-sm text-gray-600">Data structures and algos projects</p>
-            <a href="https://github.com/franfreezy/DSA2.0" target="_blank" className="mt-4 text-black-500 no-underline">View on GitHub</a>
+          {/* Academic Qualifications */}
+          <div className={`w-full sm:w-1/2 p-4 transition-all duration-300 ${activeContent === 'academic' ? 'block' : 'hidden sm:block'
+            }`}>
+            <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-150px)] overflow-y-auto">
+              <h2 className="text-2xl font-bold text-white mb-4 sticky top-0 bg-black bg-opacity-50 p-2">
+                Academic Qualifications
+              </h2>
+              <div className="space-y-4">
+                {academicQualifications.map((qualification, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-900 bg-opacity-50 p-4 rounded-lg flex gap-4 transform transition-all duration-300 hover:scale-102 hover:bg-opacity-70"
+                  >
+                    <img
+                      src={qualification.image}
+                      alt={qualification.title}
+                      className="w-12 h-12 object-cover rounded-full"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h3 className="text-lg font-semibold text-green-400">{qualification.title}</h3>
+                      <p className="text-white text-sm">{qualification.institution}</p>
+                      <p className="text-gray-400 text-sm">{qualification.achievement}</p>
+                      <p className="text-gray-400 text-sm">{qualification.year}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div id="certifications" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        Certifications
-      </div>
-
-      <div id="connect" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        <div className="flex space-x-1">
-          <a href="https://wa.me/+254729634366?text=Hello,%20Frandel." target="_blank" rel="noopener noreferrer" className="block text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" onClick={handleMenuClick}>
-            Chat
-          </a>
-          <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/github.png')" }} href="https://github.com/franfreezy"></a>
-          <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/linkedin.png')" }} href="https://www.linkedin.com/in/frandel-wanjawa/"></a>
-          <a className="h-7 w-7 bg-cover rounded-full" style={{ backgroundImage: "url('/assets/twitter.png')" }} href="https://twitter.com/codewithfreezy"></a>
-        </div>
-      </div>
-
-      <div id="blogs" className="h-screen w-full bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/assets/img3.jpg')" }}>
-        Blogs
       </div>
 
       <div
-        className="fixed bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-        style={{
-          background: `conic-gradient(#3b82f6 ${calculatePercentage()}%, #e5e7eb ${calculatePercentage()}%)`,
-        }}
+        id="projects"
+        className="min-h-screen w-full bg-cover bg-center relative py-16"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        <button
-          onClick={() => {
-            if (currentSection === sections.length - 1) {
-              // Navigate up from the last section
-              setDirection('up');
-              navigateToSection(-1);
-            } else if (currentSection === 0) {
-              setDirection('down');
-              navigateToSection(1);
-            } else {
-              const nextDirection = direction === 'down' ? 1 : -1;
-              setDirection(nextDirection === 1 ? 'down' : 'up');
-              navigateToSection(nextDirection);
-            }
-          }}
-          className="w-14 h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300"
-        >
-          {currentSection === sections.length - 1 ? '↑' : currentSection === 0 ? '↓' : direction === 'down' ? '↓' : '↑'}
-        </button>
+        {/* Dark Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        {/* Section Title */}
+        <div className="relative z-20 text-center mb-12">
+          
+          <p className="text-gray-300 max-w-2xl mx-auto px-4">
+            Exploring innovation through technology and engineering
+          </p>
+        </div>
+
+        {/* Projects Container with Scroll */}
+        <div className="relative z-20 px-4 sm:px-8">
+          <div className="bg-black bg-opacity-50 rounded-lg p-4 h-[calc(100vh-200px)] overflow-y-auto">
+            {/* Mobile View */}
+            <div className="block sm:hidden">
+              <div className="block sm:hidden w-full px-4 relative z-20">
+                <div className="space-y-6">
+                  {projects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-102"
+                    >
+                      <div className="relative h-48">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
+                        <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          {project.technologies.map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        >
+                          View Project
+                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop View */}
+            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[90rem] mx-auto">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group"
+                >
+                  <div className="relative h-48">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg transform -translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                      >
+                        View Project
+                      </a>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="relative z-20 text-center mt-4 text-gray-400">
+          <p className="text-sm">Scroll to explore more projects</p>
+          <div className="animate-bounce mt-2">↓</div>
+        </div>
       </div>
+
+      <div
+  id="certifications"
+  className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-16"
+  style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+>
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+  <div className="relative z-20 container mx-auto px-4">
+    
+    <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+      Continuous learning and professional development through recognized certifications
+    </p>
+    
+    <div className="bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-h-[60vh] overflow-y-auto">
+        {certifications.map((cert, index) => (
+          <a
+            key={index}
+            href={cert.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-900 bg-opacity-80 rounded-lg p-6 transform transition-all duration-300 hover:scale-105 hover:bg-opacity-90"
+          >
+            <div className="flex items-center justify-center mb-4">
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="w-16 h-16 object-contain rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">{cert.title}</h3>
+              <p className="text-blue-400 text-sm mb-1">{cert.issuer}</p>
+              <p className="text-gray-400 text-sm">{cert.date}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div className="text-center mt-8">
+      <p className="text-gray-400 text-sm">Click on any certification to verify</p>
+    </div>
+  </div>
+</div>
+
+      <div
+        id="connect"
+        className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-8"
+        style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+      >
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col">
+          <h2 className="text-4xl font-bold text-white text-center mb-8">Let's Connect</h2>
+          
+          <div className="flex-1 max-w-4xl mx-auto w-full bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+            <div className="space-y-8">
+              <div className="text-center mb-8">
+                <a
+                  href="https://wa.me/+254729634366"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300"
+                >
+                  <img src="/assets/whatsapp.png" alt="WhatsApp" className="h-6 w-6" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-semibold text-white mb-6">Social Links</h3>
+                  <div className="space-y-4">
+                    <a
+                      href="https://github.com/franfreezy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/github.png" alt="GitHub" className="h-8 w-8 rounded-full" />
+                      <span>Follow on GitHub</span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/frandel-wanjawa/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/linkedin.png" alt="LinkedIn" className="h-8 w-8 rounded-full" />
+                      <span>Connect on LinkedIn</span>
+                    </a>
+                    <a
+                      href="https://twitter.com/codewithfreezy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 text-white hover:text-blue-400 transition duration-300"
+                    >
+                      <img src="/assets/twitter.png" alt="Twitter" className="h-8 w-8 rounded-full" />
+                      <span>Follow on Twitter</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-semibold text-white mb-6">Contact Info</h3>
+                  <div className="space-y-4">
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📧</span>
+                      <span>frandelwanjawa19@gmail.com</span>
+                    </p>
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📱</span>
+                      <span>+254 729 634 366</span>
+                    </p>
+                    <p className="flex items-center gap-3 text-gray-300">
+                      <span className="text-xl">📍</span>
+                      <span>Nairobi, Kenya</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+  id="blogs"
+  className="min-h-screen w-full bg-cover bg-center flex flex-col justify-center relative py-16"
+  style={{ backgroundImage: "url('/assets/img3.jpg')" }}
+>
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+  <div className="relative z-20 container mx-auto px-4">
+    
+    <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+      Sharing insights and experiences in technology and engineering
+    </p>
+
+    <div className="bg-black bg-opacity-50 rounded-lg p-6 backdrop-blur-sm">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
+        {blogs.map((blog, index) => (
+          <a
+            key={index}
+            href={blog.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-900 bg-opacity-80 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group"
+          >
+            <div className="relative h-48">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+            </div>
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-semibold text-white">{blog.title}</h3>
+                <p className="text-sm text-gray-400">{blog.date}</p>
+              </div>
+              <p className="text-gray-300 text-sm mb-4">{blog.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {blog.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="text-xs px-2 py-1 bg-blue-600 bg-opacity-50 text-blue-200 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div className="text-center mt-8">
+      <a
+        href="https://medium.com/@frandelwanjawa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
+      >
+        <span>View all posts on Medium</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+      
+
+
     </>
   );
 
