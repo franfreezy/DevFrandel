@@ -1,17 +1,19 @@
-
 // vite.config.js
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
+  plugins: [react()],
+  base: '/devportfolio/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
+})
 
-  ],
-  base: '/DevFrandel/', 
-  server:{
-    port:3000
-  },
-});
+

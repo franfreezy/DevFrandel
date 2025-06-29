@@ -512,18 +512,7 @@ export default function App() {
     }
   };
 
-<<<<<<< HEAD
   const MainContent = () => (
-=======
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const message = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`);
-    window.location.href = `https://wa.me/+254729634366?text=${message}`;
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  return (
->>>>>>> 8c65aa16e684dd94c408766b22e3c365f0d0adc2
     <>
       <div id="home" className="min-h-screen">
         {isLoading && (
@@ -726,17 +715,7 @@ export default function App() {
         className="min-h-screen w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-<<<<<<< HEAD
         <div className=" p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
-=======
-        {/* Dark Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-
-
-
-        {/* Toggle Buttons for Mobile */}
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-50 flex space-x-8 sm:hidden">
->>>>>>> 8c65aa16e684dd94c408766b22e3c365f0d0adc2
           <button
             onClick={() => setActiveContent('professional')}
             className={`flex flex-col items-center transition duration-300`}
