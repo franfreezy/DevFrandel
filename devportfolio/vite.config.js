@@ -10,6 +10,7 @@ export default defineConfig({
     react(),
 
   ],
+  base: '/DevFrandel/', 
   server:{
     port:3000
   },

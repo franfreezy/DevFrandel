@@ -66,6 +66,7 @@ export default function App() {
       year: "2014",
     },
   ];
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -97,6 +98,11 @@ export default function App() {
       setCurrentAcademicIndex((prevIndex) => (prevIndex + 1) % academicQualifications.length);
     }, 10000);
     return () => clearInterval(academicInterval);
+  }, []);
+
+  useEffect(() => {
+    const isAdminRoute = window.location.pathname.includes('/admin');
+    setIsAdmin(isAdminRoute);
   }, []);
 
   const navigateToSection = (direction) => {
@@ -183,7 +189,7 @@ export default function App() {
     }
   };
 
-  return (
+  const MainContent = () => (
     <>
       <div id="home" className="min-h-screen">
         {isLoading && (
@@ -297,7 +303,7 @@ export default function App() {
         className="h-screen w-full bg-cover bg-center flex flex-col justify-center px-2"
         style={{ backgroundImage: "url('/assets/img3.jpg')" }}
       >
-        <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
+        <div className=" p-4 sm:p-6 rounded-lg shadow-lg max-w-7xl text-white h-[90%] flex flex-col gap-8 relative">
           <button
             className="absolute right-0 top-[-10px] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
             onClick={() => window.open('/assets/Frandel.pdf', '_blank')}
@@ -492,5 +498,16 @@ export default function App() {
         </button>
       </div>
     </>
+  );
+
+  return (
+    <div className={isAdmin ? 'admin-view' : ''}>
+      {isAdmin && (
+        <div className="fixed top-0 left-0 w-full bg-red-500 text-white py-2 text-center z-50">
+          Admin View
+        </div>
+      )}
+      <MainContent />
+    </div>
   );
 }
